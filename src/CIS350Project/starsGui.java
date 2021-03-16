@@ -1,4 +1,4 @@
-package escape_room;
+package CIS350Project;
 
 import java.awt.*;
 import java.awt.event.*;
