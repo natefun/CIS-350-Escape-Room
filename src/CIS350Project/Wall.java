@@ -10,6 +10,10 @@ import java.awt.event.*;
 import java.awt.geom.*;
 
 public class Wall extends JPanel {
+    int visWall = 1;
+    boolean note = true;
+    boolean coldOneWall = true;
+
     public void setVisWall(int visWall) {
         this.visWall = visWall;
     }
@@ -17,8 +21,14 @@ public class Wall extends JPanel {
     public int getVisWall() {
         return visWall;
     }
+    public void setNote() {
+        note = false;
+    }
+    public void setOne() {
+        coldOneWall = false;
+    }
 
-    int visWall = 1;
+
 
     public static void main(String[] args) {
         JFrame f = new JFrame();
@@ -37,6 +47,16 @@ public class Wall extends JPanel {
         if(visWall % 4 == 1) {
             Image image = new ImageIcon("placeholderwall.png").getImage();
             g.drawImage(image, 0, 0, this);
+            if(note == true) {
+                Image note = new ImageIcon("noteHidden.png").getImage();
+                g.drawImage(note, 355, 300, this);
+            }
+            if(coldOneWall == true) {
+                Image note = new ImageIcon("coldOneWall.png").getImage();
+                g.drawImage(note, 700, 159, this);
+            }
+
+
         } else if (visWall % 4 == 2){
             Image image = new ImageIcon("placeholderwall2.png").getImage();
             g.drawImage(image, 0, 0, this);

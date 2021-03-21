@@ -28,7 +28,7 @@ public class ERoom extends JFrame implements ActionListener{
     private JMenuItem open;
     private JMenuItem exit;
 
-    private JButton turnRight, turnLeft, askForHint;
+    private JButton turnRight, turnLeft, askForHint, pickNote, coldOne;
 
     public static void main(String[] args) {
         ERoom gui = new ERoom();
@@ -78,6 +78,18 @@ public class ERoom extends JFrame implements ActionListener{
         turnLeft.setBounds(1, 300, 50, 50);
         panel.add(turnLeft);
         turnLeft.addActionListener(this);
+
+        pickNote = new JButton(".");
+        pickNote.setBounds(405,325,60,60);
+        panel.add(pickNote);
+        pickNote.setOpaque(false);
+        pickNote.addActionListener(this);
+
+        coldOne = new JButton(".");
+        coldOne.setBounds(765,174,30,80);
+        panel.add(coldOne);
+        coldOne.setOpaque(false);
+        coldOne.addActionListener(this);
     }
 
 
@@ -115,6 +127,18 @@ public class ERoom extends JFrame implements ActionListener{
             if (event.getSource() == turnRight) {
                 wall.setVisWall(wall.getVisWall() + 5);
                 wall.redraw();
+            }
+            if (event.getSource() == pickNote) {
+                wall.setNote();
+                wall.redraw();
+                inv.setNoteInv();
+                inv.redrawInv();
+            }
+            if (event.getSource() == coldOne) {
+                wall.setOne();
+                wall.redraw();
+                inv.setColdOneInv();
+                inv.redrawInv();
             }
         }
 //    }
