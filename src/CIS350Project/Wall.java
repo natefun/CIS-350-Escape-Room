@@ -44,7 +44,10 @@ public class Wall extends JPanel {
 
         setBackground(Color.GRAY);
 
-        if(visWall % 4 == 1) {
+        if (visWall == -1) {
+            Image image = new ImageIcon("ScreenCloseUp.png").getImage();
+            g.drawImage(image, 0, 0, this);
+        }else if(visWall % 4 == 1) {
             Image image = new ImageIcon("placeholderwall.png").getImage();
             g.drawImage(image, 0, 0, this);
             if(note == true) {

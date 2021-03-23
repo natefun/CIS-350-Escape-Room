@@ -28,7 +28,7 @@ public class ERoom extends JFrame implements ActionListener{
     private JMenuItem open;
     private JMenuItem exit;
 
-    private JButton turnRight, turnLeft, askForHint, pickNote, coldOne;
+    private JButton turnRight, turnLeft, askForHint, pickNote, coldOne, viewScreen, exitScreen;
 
     public static void main(String[] args) {
         ERoom gui = new ERoom();
@@ -79,6 +79,7 @@ public class ERoom extends JFrame implements ActionListener{
         panel.add(turnLeft);
         turnLeft.addActionListener(this);
 
+        //For wall one//
         pickNote = new JButton(".");
         pickNote.setBounds(405,325,60,60);
         panel.add(pickNote);
@@ -90,6 +91,19 @@ public class ERoom extends JFrame implements ActionListener{
         panel.add(coldOne);
         coldOne.setOpaque(false);
         coldOne.addActionListener(this);
+
+        viewScreen = new JButton("x");
+        viewScreen.setBounds(275, 120, 100, 100);
+        panel.add(viewScreen);
+        viewScreen.setOpaque(false);
+        viewScreen.addActionListener(this);
+
+        //for screen close up//
+        exitScreen = new JButton("x");
+        exitScreen.setBounds(1120, 10, 30, 30);
+        panel.add(exitScreen);
+        exitScreen.setOpaque(false);
+        exitScreen.addActionListener(this);
     }
 
 
@@ -129,16 +143,34 @@ public class ERoom extends JFrame implements ActionListener{
                 wall.redraw();
             }
             if (event.getSource() == pickNote) {
-                wall.setNote();
-                wall.redraw();
-                inv.setNoteInv();
-                inv.redrawInv();
+                if(wall.getVisWall()%4==1) {
+                    wall.setNote();
+                    wall.redraw();
+                    inv.setNoteInv();
+                    inv.redrawInv();
+                }
             }
             if (event.getSource() == coldOne) {
-                wall.setOne();
-                wall.redraw();
-                inv.setColdOneInv();
-                inv.redrawInv();
+                if(wall.getVisWall()%4==1) {
+                    wall.setOne();
+                    wall.redraw();
+                    inv.setColdOneInv();
+                    inv.redrawInv();
+                }
+            }
+
+            if (event.getSource() == viewScreen) {
+                if(wall.getVisWall()%4==1) {
+                    wall.setVisWall(-1);
+                    wall.redraw();
+                }
+            }
+
+            if (event.getSource() == exitScreen) {
+                if(wall.getVisWall()==-1) {
+                    wall.setVisWall(1);
+                    wall.redraw();
+                }
             }
         }
 //    }
