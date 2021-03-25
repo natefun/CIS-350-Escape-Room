@@ -22,6 +22,7 @@ public class ERoom extends JFrame implements ActionListener{
     private JPanel panel;
     private Wall wall;
     private Inventory inv;
+    private StopWatch timer;
 
     private JMenuBar menus;
     private JMenu fileMenu;
@@ -42,7 +43,7 @@ public class ERoom extends JFrame implements ActionListener{
 
 
 
-    private ERoom(){
+    ERoom(){
         setSize(1000, 600);
         setLocationRelativeTo(null);
         panel = new JPanel();
@@ -56,6 +57,10 @@ public class ERoom extends JFrame implements ActionListener{
         inv = new Inventory();
         inv.setBounds(50, 620, 1100, 300);
         panel.add(inv);
+
+        timer = new StopWatch();
+        timer.setBounds(1000,800,165,115);
+        panel.add(timer);
 
         JMenuBar menus = new JMenuBar();
         setJMenuBar(menus);

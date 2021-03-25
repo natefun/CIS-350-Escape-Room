@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class starsGui extends JPanel implements ActionListener {
     Timer time = new Timer(5,this);
-    int x = 450, y = 400, speed = 4;
+    int x = 600, y = 500, speed = 4;
     int x1 = x, x2 = x;
     int y1 = y, y2 = y;
 
@@ -24,16 +24,16 @@ public class starsGui extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e){
-        if (x1 > 0 && x1 < 900) {
+        if (x1 > 0 && x1 < 1200) {
                 x1 = x1 + speed;
                 repaint();
         }
-        if (x1 >= 900) {
+        if (x1 >= 1200) {
                 x1 = x;
                 x1 = x1 + speed;
                 repaint();
        }
-        if (x2 > 0 && x2 < 900) {
+        if (x2 > 0 && x2 < 1200) {
             x2 = x2 - speed;
             repaint();
         }
@@ -42,16 +42,16 @@ public class starsGui extends JPanel implements ActionListener {
             x2 = x2 - speed;
             repaint();
         }
-        if (y1 > 0 && y1 < 800) {
+        if (y1 > 0 && y1 < 1000) {
             y1 = y1 + speed;
             repaint();
         }
-        if (y1 >= 800) {
+        if (y1 >= 1000) {
             y1 = y;
             y1 = y1 + speed;
             repaint();
         }
-        if (y2 > 0 && y2 < 800) {
+        if (y2 > 0 && y2 < 1000) {
             y2 = y2 - speed;
             repaint();
         }
@@ -66,7 +66,7 @@ public class starsGui extends JPanel implements ActionListener {
     public static void main (String[] args){
         starsGui s = new starsGui();
         JFrame frame = new JFrame();
-        frame.setSize(900,800);
+        frame.setSize(1200,1000);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(s);
         frame.setLocationRelativeTo(null);
