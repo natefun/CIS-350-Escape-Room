@@ -28,7 +28,8 @@ public class ERoom extends JFrame implements ActionListener{
     private JMenuItem open;
     private JMenuItem exit;
 
-    private JButton turnRight, turnLeft, askForHint, pickNote, coldOne, viewScreen, exitScreen;
+    private JButton turnRight, turnLeft, askForHint, pickNote, coldOne, viewScreen, exitScreen,
+        consoleOne, consoleTwo, consoleThree;
 
     public static void main(String[] args) {
         ERoom gui = new ERoom();
@@ -104,7 +105,26 @@ public class ERoom extends JFrame implements ActionListener{
         panel.add(exitScreen);
         exitScreen.setOpaque(false);
         exitScreen.addActionListener(this);
+
+        consoleOne = new JButton();
+        consoleOne.setBounds(390, 540, 60, 60);
+        panel.add(consoleOne);
+        consoleOne.setOpaque(false);
+        consoleOne.addActionListener(this);
+
+        consoleTwo = new JButton();
+        consoleTwo.setBounds(560, 540, 60, 60);
+        panel.add(consoleTwo);
+        consoleTwo.setOpaque(false);
+        consoleTwo.addActionListener(this);
+
+        consoleThree = new JButton();
+        consoleThree.setBounds(720, 540, 60, 60);
+        panel.add(consoleThree);
+        consoleThree.setOpaque(false);
+        consoleThree.addActionListener(this);
     }
+
 
 
 
@@ -172,6 +192,26 @@ public class ERoom extends JFrame implements ActionListener{
                     wall.redraw();
                 }
             }
+            if (event.getSource() == consoleOne) {
+                if(wall.getVisWall() == -1) {
+                    wall.setCenterConsole1();
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == consoleTwo) {
+                if(wall.getVisWall() == -1) {
+                    wall.setCenterConsole2();
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == consoleThree) {
+                if(wall.getVisWall() == -1) {
+                    wall.setCenterConsole3();
+                    wall.redraw();
+                }
+            }
+
+
         }
 //    }
 }
