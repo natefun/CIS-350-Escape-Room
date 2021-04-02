@@ -7,9 +7,9 @@ import javax.swing.*;
 
 public class StopWatch extends JPanel implements ActionListener{
 
-    JFrame frame = new JFrame();
-    JButton startButton = new JButton("START");
-    JLabel timeLabel = new JLabel();
+    final JFrame frame = new JFrame();
+    final JButton startButton = new JButton("START");
+    final JLabel timeLabel = new JLabel();
     int elapsedTime = 0;
     int seconds =0;
     int minutes =0;
@@ -17,18 +17,14 @@ public class StopWatch extends JPanel implements ActionListener{
     String seconds_string = String.format("%02d", seconds);
     String minutes_string = String.format("%02d", minutes);
 
-    Timer timer = new Timer(1000, new ActionListener() {
+    final Timer timer = new Timer(1000, e -> {
 
-        public void actionPerformed(ActionEvent e) {
-
-            elapsedTime=elapsedTime+1000;
-            minutes = (elapsedTime/60000) % 60;
-            seconds = (elapsedTime/1000) % 60;
-            seconds_string = String.format("%02d", seconds);
-            minutes_string = String.format("%02d", minutes);
-            timeLabel.setText(minutes_string+":"+seconds_string);
-
-        }
+        elapsedTime=elapsedTime+1000;
+        minutes = (elapsedTime/60000) % 60;
+        seconds = (elapsedTime/1000) % 60;
+        seconds_string = String.format("%02d", seconds);
+        minutes_string = String.format("%02d", minutes);
+        timeLabel.setText(minutes_string+":"+seconds_string);
 
     });
 
@@ -62,7 +58,7 @@ public class StopWatch extends JPanel implements ActionListener{
 
         if(e.getSource()==startButton) {
 
-            if(started==false) {
+            if(!started) {
                 started=true;
                 startButton.setText("STOP");
                 start();

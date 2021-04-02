@@ -2,9 +2,6 @@ package CIS350Project;
 
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.JLabel;
-import java.util.*;
-import java.text.*;
 
 
 public class Inventory extends JPanel {
@@ -44,11 +41,11 @@ public class Inventory extends JPanel {
         Font heading = new Font("Arial", Font.BOLD, 40);
         g.setFont(heading);
         g.drawString("Inventory", 580,50);
-        if(coldOneInv == true) {
+        if(coldOneInv) {
             Image item = new ImageIcon("coldOne.png").getImage();
             g.drawImage(item, 580, 60, this);
         }
-        if(noteInv == true) {
+        if(noteInv) {
             Image note = new ImageIcon("noteInv.png").getImage();
             g.drawImage(note, 680, 60, this);
         }

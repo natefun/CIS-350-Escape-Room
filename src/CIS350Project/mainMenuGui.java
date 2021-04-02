@@ -7,15 +7,13 @@ import java.awt.event.ActionListener;
 
 public class mainMenuGui extends JFrame implements ActionListener {
 
-  private JFrame frame;
-  private JPanel panel;
+  private final JFrame frame;
 
-  private JButton startButton;
-  private JButton leaderButton;
-  private JButton loadButton;
-  private JLabel label;
+    private final JButton startButton;
+  private final JButton leaderButton;
+  private final JButton loadButton;
 
-  public ERoom room;
+    public ERoom room;
   public StopWatch timer;
 
 
@@ -37,7 +35,7 @@ public class mainMenuGui extends JFrame implements ActionListener {
        //frame.getContentPane().add(s);
 
 
-        panel = new JPanel();
+        JPanel panel = new JPanel();
 
         panel.setLayout(null);
         //panel.add(bg);
@@ -47,7 +45,7 @@ public class mainMenuGui extends JFrame implements ActionListener {
         //frame.add(s);
         //frame.getContentPane().add(s);
 
-       label = new JLabel("SPACE ESCAPE");
+        JLabel label = new JLabel("SPACE ESCAPE");
        label.setFont(new Font("Monospace", Font.ITALIC, 50));
        label.setForeground(Color.white);
        label.setSize(400,200);

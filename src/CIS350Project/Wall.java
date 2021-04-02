@@ -2,12 +2,6 @@ package CIS350Project;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.*;
-import javax.imageio.*;
-import java.io.*;
-import java.util.ArrayList;
-import java.awt.event.*;
-import java.awt.geom.*;
 
 public class Wall extends JPanel {
     int visWall = 1;
@@ -78,7 +72,7 @@ public class Wall extends JPanel {
             } else if (centerConsole3 == 3) {
                 Image image3 = new ImageIcon("CenterPic3.png").getImage();
                 g.drawImage(image3, 258, 17, this);
-            }else if (centerConsole3 == 4) {
+            } else if (centerConsole3 == 4) {
                 Image image3 = new ImageIcon("CenterPic4.png").getImage();
                 g.drawImage(image3, 258, 17, this);
             }
@@ -91,7 +85,7 @@ public class Wall extends JPanel {
             } else if (centerConsole2 == 3) {
                 Image image2 = new ImageIcon("CenterPic32.png").getImage();
                 g.drawImage(image2, 258, 17, this);
-            }else if (centerConsole2 == 4) {
+            } else if (centerConsole2 == 4) {
                 Image image2 = new ImageIcon("CenterPic42.png").getImage();
                 g.drawImage(image2, 258, 17, this);
             }
@@ -104,30 +98,41 @@ public class Wall extends JPanel {
             } else if (centerConsole1 == 3) {
                 Image image1 = new ImageIcon("CenterPic31.png").getImage();
                 g.drawImage(image1, 258, 17, this);
-            }else if (centerConsole1 == 4) {
+            } else if (centerConsole1 == 4) {
                 Image image1 = new ImageIcon("CenterPic41.png").getImage();
                 g.drawImage(image1, 258, 17, this);
             }
-            if (centerConsole1 ==2 && centerConsole2 ==2 && centerConsole3 ==2) {
+            if (centerConsole1 == 2 && centerConsole2 == 2 && centerConsole3 == 2) {
                 Image image4 = new ImageIcon("ConsoleCode.png").getImage();
                 g.drawImage(image4, 258, 17, this);
             }
-        }else if(visWall % 4 == 1) {
+
+            //for wall 2
+        }else if (visWall == -3) {
+            Image image = new ImageIcon("clockZoom.png").getImage();
+            g.drawImage(image, 0, 0, this);
+        }
+        else if(visWall == -4){
+            Image image = new ImageIcon("greenbutZoom.png").getImage();
+            g.drawImage(image, 0, 0, this);
+        }
+
+        else if(visWall % 4 == 1) {
             Image image = new ImageIcon("placeholderwall.png").getImage();
             g.drawImage(image, 0, 0, this);
-            if(note == true) {
+            if(note) {
                 Image note = new ImageIcon("noteHidden.png").getImage();
                 g.drawImage(note, 355, 300, this);
             }
-            if(coldOneWall == true) {
+            if(coldOneWall) {
                 Image note = new ImageIcon("coldOneWall.png").getImage();
                 g.drawImage(note, 700, 159, this);
             }
 
-
         } else if (visWall % 4 == 2){
             Image image = new ImageIcon("placeholderwall2.png").getImage();
             g.drawImage(image, 0, 0, this);
+
         } else if (visWall % 4 == 3){
             Image image = new ImageIcon("placeholderwall3.png").getImage();
             g.drawImage(image, 0, 0, this);
