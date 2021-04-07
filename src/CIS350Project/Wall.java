@@ -7,6 +7,7 @@ public class Wall extends JPanel {
     int visWall = 1;
     boolean note = true;
     boolean coldOneWall = true;
+    boolean card = true;
     int centerConsole1 = 1;
     int centerConsole2 = 2;
     int centerConsole3 = 3;
@@ -14,20 +15,23 @@ public class Wall extends JPanel {
     public void setVisWall(int visWall) {
         this.visWall = visWall;
     }
+
     public void setCenterConsole1() {
-        if(centerConsole1 == 4)
+        if (centerConsole1 == 4)
             centerConsole1 = 1;
         else
             centerConsole1 = centerConsole1 + 1;
     }
+
     public void setCenterConsole2() {
-        if(centerConsole2 == 4)
-            centerConsole2 =1;
+        if (centerConsole2 == 4)
+            centerConsole2 = 1;
         else
             centerConsole2 = centerConsole2 + 1;
     }
+
     public void setCenterConsole3() {
-        if(centerConsole3 == 4)
+        if (centerConsole3 == 4)
             centerConsole3 = 1;
         else
             centerConsole3 = centerConsole3 + 1;
@@ -37,13 +41,14 @@ public class Wall extends JPanel {
     public int getVisWall() {
         return visWall;
     }
+
     public void setNote() {
         note = false;
     }
+
     public void setOne() {
         coldOneWall = false;
     }
-
 
 
     public static void main(String[] args) {
@@ -108,39 +113,43 @@ public class Wall extends JPanel {
             }
 
             //for wall 2
-        }else if (visWall == -3) {
+        } else if (visWall == -3) {
             Image image = new ImageIcon("clockZoom.png").getImage();
             g.drawImage(image, 0, 0, this);
-        }
-        else if(visWall == -4){
+        } else if (visWall == -4) {
             Image image = new ImageIcon("greenbutZoom.png").getImage();
             g.drawImage(image, 0, 0, this);
-        }
-
-        else if(visWall % 4 == 1) {
+        } else if (visWall % 4 == 1) {
             Image image = new ImageIcon("placeholderwall.png").getImage();
             g.drawImage(image, 0, 0, this);
-            if(note) {
+            if (note) {
                 Image note = new ImageIcon("noteHidden.png").getImage();
                 g.drawImage(note, 355, 300, this);
             }
-            if(coldOneWall) {
+            if (coldOneWall) {
                 Image note = new ImageIcon("coldOneWall.png").getImage();
                 g.drawImage(note, 700, 159, this);
             }
 
-        } else if (visWall % 4 == 2){
+        } else if (visWall % 4 == 2) {
             Image image = new ImageIcon("placeholderwall2.png").getImage();
             g.drawImage(image, 0, 0, this);
 
-        } else if (visWall % 4 == 3){
+            //Wall 3 Nate's wall
+        } else if (visWall % 4 == 3) {
             Image image = new ImageIcon("placeholderwall3.png").getImage();
             g.drawImage(image, 0, 0, this);
+            //Displays the access card
+            if (card) {
+                Image note = new ImageIcon("AccessCard.png").getImage();
+                g.drawImage(note, 300, 400, this);
+            }
         } else {
             Image image = new ImageIcon("placeholderwall0.png").getImage();
             g.drawImage(image, 0, 0, this);
         }
     }
+
     public void redraw() {
         repaint();
     }
