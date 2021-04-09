@@ -7,10 +7,10 @@ import java.awt.event.ActionListener;
 
 public class mainMenuGui extends JFrame implements ActionListener {
 
-  private JButton startButton;
-  private JButton leaderButton;
-  private JButton loadButton;
-  private JLabel label;
+  private final JButton startButton;
+  private final JButton leaderButton;
+  private final JButton loadButton;
+  private final JLabel label;
 
 
     public mainMenuGui() {

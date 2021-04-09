@@ -5,8 +5,10 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class starsGui extends JPanel implements ActionListener {
-    Timer time = new Timer(5,this);
-    int x = 450, y = 400, speed = 4;
+    final Timer time = new Timer(5,this);
+    final int x = 450;
+    final int y = 400;
+    final int speed = 4;
     int x1 = x, x2 = x;
     int y1 = y, y2 = y;
 
