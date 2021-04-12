@@ -15,6 +15,7 @@ public class Wall extends JPanel {
     final int[] fleetCode = new int[] {0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1};
     boolean consolePuzzle = false;
     boolean fleetPuzzle = false;
+    boolean card = true;
 
 
     public void setVisWall(int visWall) {
@@ -214,6 +215,11 @@ public class Wall extends JPanel {
         } else if (visWall % 4 == 3){
             Image image = new ImageIcon("placeholderwall3.png").getImage();
             g.drawImage(image, 0, 0, this);
+            //Displays the access card
+            if (card) {
+                Image note = new ImageIcon("AccessCard.png").getImage();
+                g.drawImage(note, 300, 400, this);
+            }
         } else {
             Image image = new ImageIcon("placeholderwall0.png").getImage();
             g.drawImage(image, 0, 0, this);

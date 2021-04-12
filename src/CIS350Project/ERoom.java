@@ -38,6 +38,7 @@ public class ERoom extends JFrame implements ActionListener{
     private final JButton fleet14;
     private final JButton fleet16;
     private final JButton clearFleet;
+    private final JButton accessCard; //button for picking up access card
 
     public static void main(String[] args) {
         ERoom gui = new ERoom();
@@ -100,6 +101,13 @@ public class ERoom extends JFrame implements ActionListener{
         panel.add(coldOne);
         coldOne.setOpaque(false);
         coldOne.addActionListener(this);
+
+        //button to pick up the access card
+        accessCard = new JButton(".");
+        accessCard.setBounds(350, 410, 60, 60);
+        panel.add(accessCard);
+        accessCard.setOpaque(false);
+        accessCard.addActionListener(this);
 
         viewScreen = new JButton("x");
         viewScreen.setBounds(275, 120, 100, 100);
@@ -290,6 +298,16 @@ public class ERoom extends JFrame implements ActionListener{
                     wall.setOne();
                     wall.redraw();
                     inv.setColdOneInv();
+                    inv.redrawInv();
+                }
+            }
+
+            //action listener for picking up the access card
+            if (event.getSource() == accessCard) {
+                if (wall.getVisWall() % 4 == 3) {
+                    wall.setOne();
+                    wall.redraw();
+                    inv.setCardInv();
                     inv.redrawInv();
                 }
             }

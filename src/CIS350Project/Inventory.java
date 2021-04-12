@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class Inventory extends JPanel {
     JLabel clue1;
-    boolean noteInv,coldOneInv, clueOne, clueTwo, clueThree, clueFour, clueFive, clueSix = false;
+    boolean noteInv,coldOneInv, clueOne, clueTwo, clueThree, clueFour, clueFive, clueSix, cardInv = false;
 
     public void setNoteInv() {
         noteInv = true;
@@ -20,7 +20,8 @@ public class Inventory extends JPanel {
     public void setClueFour() {clueFour = true;}
     public void setClueFive() {clueFive = true;}
     public void setClueSix() {clueSix = true;}
-
+    //Sets the value that determines if the access card is in the inventory
+    public void setCardInv() {cardInv = true;}
 
 
 
@@ -72,6 +73,11 @@ public class Inventory extends JPanel {
         if(noteInv) {
             Image note = new ImageIcon("noteInv.png").getImage();
             g.drawImage(note, 680, 60, this);
+        }
+        //Show the access card in the inventory
+        if (cardInv) {
+            Image note = new ImageIcon("cardInv.png").getImage();
+            g.drawImage(note, 880, 60, this);
         }
 
         g.setColor(Color.RED);
