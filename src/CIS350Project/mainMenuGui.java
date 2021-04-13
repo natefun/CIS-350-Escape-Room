@@ -7,29 +7,23 @@ import java.awt.event.ActionListener;
 
 public class mainMenuGui extends JFrame implements ActionListener {
 
-  private final JFrame frame;
-
-    private final JButton startButton;
+  private final JButton startButton;
   private final JButton leaderButton;
   private final JButton loadButton;
-
-    public ERoom room;
-  public StopWatch timer;
+  private final JLabel label;
 
 
     public mainMenuGui() {
 
-       frame = new JFrame("SPACE ESCAPE");
-       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JFrame frame = new JFrame("SPACE ESCAPE");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Insets insets = frame.getInsets();
-        frame.setSize(1200 + insets.left + insets.right,
-                1000 + insets.top + insets.bottom);
+        frame.setSize(900 + insets.left + insets.right,
+                800 + insets.top + insets.bottom);
 
       //JPanel s = new starsGui();
-       //starsGui s = new starsGui();
-       JLabel bg = new JLabel();
-      bg.setIcon(new ImageIcon("stars.gif"));
+       starsGui s = new starsGui();
        //s.setLayout(null);
       // s.setVisible(true);
        //frame.getContentPane().add(s);
@@ -38,18 +32,16 @@ public class mainMenuGui extends JFrame implements ActionListener {
         JPanel panel = new JPanel();
 
         panel.setLayout(null);
-        //panel.add(bg);
         panel.setBackground(new Color(0, 0, 0, 255));
-        panel.add(bg);
         //panel.add(s);
         //frame.add(s);
         //frame.getContentPane().add(s);
 
-        JLabel label = new JLabel("SPACE ESCAPE");
+       label = new JLabel("SPACE ESCAPE");
        label.setFont(new Font("Monospace", Font.ITALIC, 50));
        label.setForeground(Color.white);
        label.setSize(400,200);
-       label.setLocation(395,100);
+       label.setLocation(275,100);
 
 
 
@@ -68,13 +60,13 @@ public class mainMenuGui extends JFrame implements ActionListener {
      insets = panel.getInsets();
 
         Dimension size = startButton.getPreferredSize();
-        startButton.setBounds(500 + insets.left, 400 + insets.top,
+        startButton.setBounds(375 + insets.left, 300 + insets.top,
                 size.width + 50, size.height + 20);
         size = leaderButton.getPreferredSize();
-        leaderButton.setBounds(495 + insets.left, 450 + insets.top,
+        leaderButton.setBounds(370 + insets.left, 350 + insets.top,
                 size.width + 50, size.height + 20);
         size = loadButton.getPreferredSize();
-        loadButton.setBounds(500 + insets.left, 500 + insets.top,
+        loadButton.setBounds(375 + insets.left, 400 + insets.top,
                 size.width + 50, size.height + 20);
 
 
@@ -101,17 +93,6 @@ public class mainMenuGui extends JFrame implements ActionListener {
         Object selc = e.getSource();
 
         if (startButton == selc){
-            room = new ERoom();
-            room.setVisible(true);
-
-            Insets insets = frame.getInsets();
-            room.setSize(1200 + insets.left + insets.right,
-                    1000 + insets.top + insets.bottom);
-           frame.dispose();
-
-           timer = new StopWatch();
-           timer.start();
-
         }
 
         if (leaderButton == selc){

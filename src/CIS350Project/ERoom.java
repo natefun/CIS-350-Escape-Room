@@ -3,7 +3,7 @@ package CIS350Project;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class ERoom extends JFrame implements ActionListener {
+public class ERoom extends JFrame implements ActionListener{
     private final Wall wall;
     private final Inventory inv;
 
@@ -17,13 +17,28 @@ public class ERoom extends JFrame implements ActionListener {
     private final JButton pickNote;
     private final JButton coldOne;
     private final JButton viewScreen;
+    private final JButton viewBoard;
     private final JButton exitScreen;
     private final JButton consoleOne;
     private final JButton consoleTwo;
     private final JButton consoleThree;
-    private final JButton clock;
-    private final JButton greenButs;
-    private final JButton g1, g2, g3, g4, g5, g6, g7, g8, g9;
+    private final JButton exitScreen2;
+    private final JButton fleet1;
+    private final JButton fleet2;
+    private final JButton fleet3;
+    private final JButton fleet4;
+    private final JButton fleet5;
+    private final JButton fleet6;
+    private final JButton fleet7;
+    private final JButton fleet8;
+    private final JButton fleet9;
+    private final JButton fleet11;
+    private final JButton fleet12;
+    private final JButton fleet13;
+    private final JButton fleet14;
+    private final JButton fleet16;
+    private final JButton clearFleet;
+    private final JButton accessCard; //button for picking up access card
 
     public static void main(String[] args) {
         ERoom gui = new ERoom();
@@ -36,7 +51,8 @@ public class ERoom extends JFrame implements ActionListener {
     }
 
 
-    ERoom() {
+
+    private ERoom(){
         setSize(1000, 600);
         setLocationRelativeTo(null);
         JPanel panel = new JPanel();
@@ -50,10 +66,6 @@ public class ERoom extends JFrame implements ActionListener {
         inv = new Inventory();
         inv.setBounds(50, 620, 1100, 300);
         panel.add(inv);
-
-        StopWatch timer = new StopWatch();
-        timer.setBounds(1000, 800, 165, 115);
-        panel.add(timer);
 
         JMenuBar menus = new JMenuBar();
         setJMenuBar(menus);
@@ -79,13 +91,13 @@ public class ERoom extends JFrame implements ActionListener {
 
         //For wall one//
         pickNote = new JButton(".");
-        pickNote.setBounds(405, 325, 60, 60);
+        pickNote.setBounds(405,325,60,60);
         panel.add(pickNote);
         pickNote.setOpaque(false);
         pickNote.addActionListener(this);
 
         coldOne = new JButton(".");
-        coldOne.setBounds(765, 174, 30, 80);
+        coldOne.setBounds(765,174,30,80);
         panel.add(coldOne);
         coldOne.setOpaque(false);
         coldOne.addActionListener(this);
@@ -95,6 +107,12 @@ public class ERoom extends JFrame implements ActionListener {
         panel.add(viewScreen);
         viewScreen.setOpaque(false);
         viewScreen.addActionListener(this);
+
+        viewBoard = new JButton("x");
+        viewBoard.setBounds(790, 220, 170, 100);
+        panel.add(viewBoard);
+        viewBoard.setOpaque(false);
+        viewBoard.addActionListener(this);
 
         //for screen close up//
         exitScreen = new JButton("x");
@@ -121,73 +139,107 @@ public class ERoom extends JFrame implements ActionListener {
         consoleThree.setOpaque(false);
         consoleThree.addActionListener(this);
 
-        //for wall 2
-        clock = new JButton("clock");
-        clock.setBounds(760, 147, 58, 58);
-        panel.add(clock);
-        clock.setOpaque(false);
-        clock.addActionListener(this);
+        //for board close up
+        exitScreen2 = new JButton("x");
+        exitScreen2.setBounds(1090, 30, 30, 30);
+        panel.add(exitScreen2);
+        exitScreen2.setOpaque(false);
+        exitScreen2.addActionListener(this);
 
-        greenButs = new JButton("Buts");
-        greenButs.setBounds(533, 261, 120, 57);
-        panel.add(greenButs);
-        greenButs.setOpaque(false);
-        greenButs.addActionListener(this);
+        fleet1 = new JButton();
+        fleet1.setBounds(459, 161, 10, 10);
+        panel.add(fleet1);
+        fleet1.setOpaque(false);
+        fleet1.addActionListener(this);
 
-        g1 = new JButton(".");
-        g1.setBounds(95, 430, 58, 58);
-        panel.add(g1);
-        g1.setOpaque(false);
-        g1.addActionListener(this);
+        fleet2 = new JButton();
+        fleet2.setBounds(557, 161, 10, 10);
+        panel.add(fleet2);
+        fleet2.setOpaque(false);
+        fleet2.addActionListener(this);
 
-        g2 = new JButton(".");
-        g2.setBounds(217, 432, 58, 58);
-        panel.add(g2);
-        g2.setOpaque(false);
-        g2.addActionListener(this);
+        fleet3 = new JButton();
+        fleet3.setBounds(651, 161, 10, 10);
+        panel.add(fleet3);
+        fleet3.setOpaque(false);
+        fleet3.addActionListener(this);
 
-        g3 = new JButton(".");
-        g3.setBounds(339, 432, 58, 58);
-        panel.add(g3);
-        g3.setOpaque(false);
-        g3.addActionListener(this);
+        fleet4 = new JButton();
+        fleet4.setBounds(748, 161, 10, 10);
+        panel.add(fleet4);
+        fleet4.setOpaque(false);
+        fleet4.addActionListener(this);
 
-        g4 = new JButton(".");
-        g4.setBounds(461, 430, 58, 58);
-        panel.add(g4);
-        g4.setOpaque(false);
-        g4.addActionListener(this);
+        fleet5 = new JButton();
+        fleet5.setBounds(459, 266, 10, 10);
+        panel.add(fleet5);
+        fleet5.setOpaque(false);
+        fleet5.addActionListener(this);
 
-        g5 = new JButton(".");
-        g5.setBounds(577, 428, 58, 58);
-        panel.add(g5);
-        g5.setOpaque(false);
-        g5.addActionListener(this);
+        fleet6 = new JButton();
+        fleet6.setBounds(557, 266, 10, 10);
+        panel.add(fleet6);
+        fleet6.setOpaque(false);
+        fleet6.addActionListener(this);
 
-        g6 = new JButton(".");
-        g6.setBounds(698, 429, 58, 58);
-        panel.add(g6);
-        g6.setOpaque(false);
-        g6.addActionListener(this);
+        fleet7 = new JButton();
+        fleet7.setBounds(651, 266, 10, 10);
+        panel.add(fleet7);
+        fleet7.setOpaque(false);
+        fleet7.addActionListener(this);
 
-        g7 = new JButton(".");
-        g7.setBounds(815, 426, 58, 58);
-        panel.add(g7);
-        g7.setOpaque(false);
-        g7.addActionListener(this);
+        fleet8 = new JButton();
+        fleet8.setBounds(748, 266, 10, 10);
+        panel.add(fleet8);
+        fleet8.setOpaque(false);
+        fleet8.addActionListener(this);
 
-        g8 = new JButton(".");
-        g8.setBounds(938, 427, 58, 58);
-        panel.add(g8);
-        g8.setOpaque(false);
-        g8.addActionListener(this);
+        fleet9 = new JButton();
+        fleet9.setBounds(459, 375, 10, 10);
+        panel.add(fleet9);
+        fleet9.setOpaque(false);
+        fleet9.addActionListener(this);
 
-        g9 = new JButton(".");
-        g9.setBounds(1062, 420, 58, 58);
-        panel.add(g9);
-        g9.setOpaque(false);
-        g9.addActionListener(this);
+        fleet11 = new JButton();
+        fleet11.setBounds(651, 375, 10, 10);
+        panel.add(fleet11);
+        fleet11.setOpaque(false);
+        fleet11.addActionListener(this);
+
+        fleet12 = new JButton();
+        fleet12.setBounds(748, 375, 10, 10);
+        panel.add(fleet12);
+        fleet12.setOpaque(false);
+        fleet12.addActionListener(this);
+
+        fleet13 = new JButton();
+        fleet13.setBounds(459, 479, 10, 10);
+        panel.add(fleet13);
+        fleet13.setOpaque(false);
+        fleet13.addActionListener(this);
+
+        fleet14 = new JButton();
+        fleet14.setBounds(557, 479, 10, 10);
+        panel.add(fleet14);
+        fleet14.setOpaque(false);
+        fleet14.addActionListener(this);
+
+        fleet16 = new JButton();
+        fleet16.setBounds(748, 479, 10, 10);
+        panel.add(fleet16);
+        fleet16.setOpaque(false);
+        fleet16.addActionListener(this);
+
+        clearFleet = new JButton();
+        clearFleet.setBounds(83, 180, 155, 50);
+        panel.add(clearFleet);
+        clearFleet.setOpaque(false);
+        clearFleet.addActionListener(this);
+
+
     }
+
+
 
 
 // Something like this eventually
@@ -210,101 +262,140 @@ public class ERoom extends JFrame implements ActionListener {
 //
 //        }
 
-    //    private class ButtonListener implements ActionListener {
-    public void actionPerformed(ActionEvent event) {
+//    private class ButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
 
-        if (event.getSource() == exit) {
-            System.exit(0);
-        }
-        if (event.getSource() == turnLeft) {
-            wall.setVisWall(wall.getVisWall() + 3);
-            wall.redraw();
-        }
-        if (event.getSource() == turnRight) {
-            wall.setVisWall(wall.getVisWall() + 5);
-            wall.redraw();
-        }
-        if (event.getSource() == pickNote) {
-            if (wall.getVisWall() % 4 == 1) {
-                wall.setNote();
-                wall.redraw();
-                inv.setNoteInv();
-                inv.redrawInv();
+            if (event.getSource() == exit) {
+                System.exit(0);
             }
-        }
-        if (event.getSource() == coldOne) {
-            if (wall.getVisWall() % 4 == 1) {
-                wall.setOne();
+            if (event.getSource() == turnLeft) {
+                wall.setVisWall(wall.getVisWall() + 3);
                 wall.redraw();
-                inv.setColdOneInv();
-                inv.redrawInv();
             }
+<<<<<<< HEAD
         }
+=======
+            if (event.getSource() == turnRight) {
+                wall.setVisWall(wall.getVisWall() + 5);
+                wall.redraw();
+            }
+>>>>>>> 2b132e6c8745ca8708ee6ec8d65d18602332b22a
 
-        if (event.getSource() == viewScreen) {
-            if (wall.getVisWall() % 4 == 1) {
-                wall.setVisWall(-1);
-                wall.redraw();
+            //Buttons on wall 1
+            if (event.getSource() == pickNote) {
+                if(wall.getVisWall()%4==1) {
+                    wall.setNote();
+                    wall.redraw();
+                    inv.setNoteInv();
+                    inv.redrawInv();
+                }
             }
-        }
+            if (event.getSource() == coldOne) {
+                if(wall.getVisWall()%4==1) {
+                    wall.setOne();
+                    wall.redraw();
+                    inv.setColdOneInv();
+                    inv.redrawInv();
+                }
+            }
 
-        if (event.getSource() == exitScreen) {
-            if (wall.getVisWall() == -1) {
-                wall.setVisWall(1);
-                wall.redraw();
+            //action listener for picking up the access card
+            if (event.getSource() == accessCard) {
+                if (wall.getVisWall() % 4 == 3) {
+                    wall.setOne();
+                    wall.redraw();
+                    inv.setCardInv();
+                    inv.redrawInv();
+                }
             }
-        }
-        if (event.getSource() == consoleOne) {
-            if (wall.getVisWall() == -1) {
-                wall.setCenterConsole1();
-                wall.redraw();
-            }
-        }
-        if (event.getSource() == consoleTwo) {
-            if (wall.getVisWall() == -1) {
-                wall.setCenterConsole2();
-                wall.redraw();
-            }
-        }
-        if (event.getSource() == consoleThree) {
-            if (wall.getVisWall() == -1) {
-                wall.setCenterConsole3();
-                wall.redraw();
-            }
-        }
 
-        //actions for wall 2
-        if (event.getSource() == clock) {
-            if (wall.getVisWall() % 4 == 2) {
-                wall.setVisWall(-3);
-                wall.redraw();
+            if (event.getSource() == viewScreen) {
+                if(wall.getVisWall()%4==1) {
+                    wall.setVisWall(-1);
+                    wall.redraw();
+                }
             }
+
+            if (event.getSource() == viewBoard) {
+                if(wall.getVisWall() == 1) {
+                    wall.setVisWall(-2);
+                    wall.redraw();
+                }
+            }
+
+            //Buttons on wall -1
+            if (event.getSource() == exitScreen) {
+                if(wall.getVisWall()==-1) {
+                    wall.setVisWall(1);
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == consoleOne) {
+                if(wall.getVisWall() == -1) {
+                    wall.setCenterConsole1();
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == consoleTwo) {
+                if(wall.getVisWall() == -1) {
+                    wall.setCenterConsole2();
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == consoleThree) {
+                if(wall.getVisWall() == -1) {
+                    wall.setCenterConsole3();
+                    wall.redraw();
+                }
+            }
+
+            //buttons on wall -2
+            if (event.getSource() == exitScreen2) {
+                if(wall.getVisWall()==-2) {
+                    wall.setVisWall(1);
+                    wall.redraw();
+                }
+            }
+<<<<<<< HEAD
         }
         if (event.getSource() == greenButs) {
             if (wall.getVisWall() % 4 == 2) {
                    wall.setVisWall(-4);
                     wall.redraw();
+=======
+
+            if (event.getSource() == fleet1) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(1);
+                    wall.redraw();
+                }
+>>>>>>> 2b132e6c8745ca8708ee6ec8d65d18602332b22a
             }
-        }
-        if (event.getSource() == g1) {
-            if (wall.getVisWall() == -4) {
-                wall.redraw();
+            if (event.getSource() == fleet2) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(2);
+                    wall.redraw();
+                }
             }
-        }
-        if (event.getSource() == g2) {
-            if (wall.getVisWall() == -4) {
-                wall.redraw();
+            if (event.getSource() == fleet3) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(3);
+                    wall.redraw();
+                }
             }
-        }
-        if (event.getSource() == g3) {
-            if (wall.getVisWall() == -4) {
-                wall.redraw();
+            if (event.getSource() == fleet4) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(4);
+                    wall.redraw();
+                }
             }
-        }
-        if (event.getSource() == g4) {
-            if (wall.getVisWall() == -4) {
-                wall.redraw();
+            if (event.getSource() == fleet5) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(5);
+                    wall.redraw();
+                }
             }
+<<<<<<< HEAD
         } if (event.getSource() == g5) {
             if (wall.getVisWall() == -4) {
                 wall.redraw();
@@ -324,8 +415,80 @@ public class ERoom extends JFrame implements ActionListener {
         } if (event.getSource() == g9) {
             if (wall.getVisWall() == -4) {
                 wall.redraw();
+=======
+            if (event.getSource() == fleet6) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(6);
+                    wall.redraw();
+                }
             }
+            if (event.getSource() == fleet7) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(7);
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == fleet8) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(8);
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == fleet9) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(9);
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == fleet11) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(11);
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == fleet12) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(12);
+                    wall.redraw();
+                }
+>>>>>>> 2b132e6c8745ca8708ee6ec8d65d18602332b22a
+            }
+            if (event.getSource() == fleet13) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(13);
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == fleet14) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(14);
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == fleet16) {
+                if(wall.getVisWall() == -2) {
+                    wall.setFleet(16);
+                    wall.redraw();
+                }
+            }
+            if (event.getSource() == clearFleet) {
+                if(wall.getVisWall() == -2) {
+                    wall.clearFleet();
+                    wall.redraw();
+                }
+            }
+            if(wall.getFleetPuzzle())
+                inv.setClueOne();
+            if(wall.getConsolePuzzle())
+                inv.setClueFour();
+            inv.redrawInv();
+
+
+
         }
 
+<<<<<<< HEAD
      }
+=======
+>>>>>>> 2b132e6c8745ca8708ee6ec8d65d18602332b22a
 }
