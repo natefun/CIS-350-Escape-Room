@@ -16,7 +16,6 @@ public class ERoom extends JFrame implements ActionListener {
     private JButton askForHint;
     private final JButton pickNote;
     private final JButton coldOne;
-    private final JButton accessCard; //button for picking up access card
     private final JButton viewScreen;
     private final JButton exitScreen;
     private final JButton consoleOne;
@@ -90,13 +89,6 @@ public class ERoom extends JFrame implements ActionListener {
         panel.add(coldOne);
         coldOne.setOpaque(false);
         coldOne.addActionListener(this);
-
-        //button to pick up the access card
-        accessCard = new JButton(".");
-        accessCard.setBounds(350, 410, 60, 60);
-        panel.add(accessCard);
-        accessCard.setOpaque(false);
-        accessCard.addActionListener(this);
 
         viewScreen = new JButton("x");
         viewScreen.setBounds(275, 120, 100, 100);
@@ -248,15 +240,6 @@ public class ERoom extends JFrame implements ActionListener {
                 inv.redrawInv();
             }
         }
-        //action listener for picking up the access card
-        if (event.getSource() == accessCard) {
-            if (wall.getVisWall() % 4 == 3) {
-                wall.setOne();
-                wall.redraw();
-                inv.setCardInv();
-                inv.redrawInv();
-            }
-        }
 
         if (event.getSource() == viewScreen) {
             if (wall.getVisWall() % 4 == 1) {
@@ -299,8 +282,8 @@ public class ERoom extends JFrame implements ActionListener {
         }
         if (event.getSource() == greenButs) {
             if (wall.getVisWall() % 4 == 2) {
-                wall.setVisWall(-4);
-                wall.redraw();
+                   wall.setVisWall(-4);
+                    wall.redraw();
             }
         }
         if (event.getSource() == g1) {
@@ -322,32 +305,27 @@ public class ERoom extends JFrame implements ActionListener {
             if (wall.getVisWall() == -4) {
                 wall.redraw();
             }
-        }
-        if (event.getSource() == g5) {
+        } if (event.getSource() == g5) {
             if (wall.getVisWall() == -4) {
                 wall.redraw();
             }
-        }
-        if (event.getSource() == g6) {
+        } if (event.getSource() == g6) {
             if (wall.getVisWall() == -4) {
                 wall.redraw();
             }
-        }
-        if (event.getSource() == g7) {
+        } if (event.getSource() == g7) {
             if (wall.getVisWall() == -4) {
                 wall.redraw();
             }
-        }
-        if (event.getSource() == g8) {
+        } if (event.getSource() == g8) {
             if (wall.getVisWall() == -4) {
                 wall.redraw();
             }
-        }
-        if (event.getSource() == g9) {
+        } if (event.getSource() == g9) {
             if (wall.getVisWall() == -4) {
                 wall.redraw();
             }
         }
 
-    }
+     }
 }
