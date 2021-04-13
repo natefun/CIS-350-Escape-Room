@@ -7,16 +7,27 @@ import java.awt.event.ActionListener;
 
 public class mainMenuGui extends JFrame implements ActionListener {
 
+/** final for frame **/
   private final JFrame frame;
 
-    private final JButton startButton;
+    /** final for startButton **/
+  private final JButton startButton;
+    /** final for leaderButton **/
   private final JButton leaderButton;
+    /** final for loadButton **/
   private final JButton loadButton;
 
-    public ERoom room;
+  /** creates object room **/
+  public ERoom room;
+    /** creates object timer **/
   public StopWatch timer;
 
 
+    /**
+     * constructor mainMenuGui that create frame and panel
+     * where JButtons are created
+     *
+     */
     public mainMenuGui() {
 
        frame = new JFrame("SPACE ESCAPE");
@@ -95,11 +106,16 @@ public class mainMenuGui extends JFrame implements ActionListener {
 
     }
 
-
+    /**
+     * action perform method
+     *
+     * @param e for button click
+     */
 
     public void actionPerformed(ActionEvent e) {
         Object selc = e.getSource();
 
+//if the start button to start game and starts stopwatch
         if (startButton == selc){
             room = new ERoom();
             room.setVisible(true);
@@ -113,14 +129,20 @@ public class mainMenuGui extends JFrame implements ActionListener {
            timer.start();
 
         }
-
+// shows leaderboard
         if (leaderButton == selc){
         }
 
+        // allows the user to load a saved game
         if (loadButton == selc){
         }
 
     }
+
+    /**
+     * create the GUI
+     * @param args
+     */
     public static void main(String[] args) {
         new mainMenuGui();
 
