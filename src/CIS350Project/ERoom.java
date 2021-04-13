@@ -8,7 +8,7 @@ public class ERoom extends JFrame implements ActionListener {
     private JPanel panel;
     private final Wall wall;
     private final Inventory inv;
-    //private StopWatch timer;
+    private StopWatch timer;
 
     private JMenuBar menus;
     private JMenu fileMenu;
