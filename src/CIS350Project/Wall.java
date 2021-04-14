@@ -377,6 +377,10 @@ public class Wall extends JPanel {
         } else if (visWall == -6) {
             Image image6 = new ImageIcon("ColorsCloseUp.png").getImage();
             g.drawImage(image6, 0, 0, this);
+//            int[] colorSeq = new int[10];
+//            for(int i = 0; i < 9; i++){
+//                colorSeq[i] = (int) (Math.random() * 4);
+//            }
             if (lightRed == true) {
                 Image image3 = new ImageIcon("RedOverlay.png").getImage();
                 g.drawImage(image3, 0, 0, this);
