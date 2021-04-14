@@ -49,6 +49,7 @@ public class ERoom extends JFrame implements ActionListener {
     private final JButton fleet16;
     private final JButton clearFleet;
     private final JButton accessCard; //button for picking up access card
+    private final JButton colorsScreen; //button for picking up access card
 
 
     public static void main(String[] args) {
@@ -122,6 +123,13 @@ public class ERoom extends JFrame implements ActionListener {
         panel.add(accessCard);
         accessCard.setOpaque(false);
         accessCard.addActionListener(this);
+
+        //shows screen closeup for colors
+        colorsScreen = new JButton(".");
+        colorsScreen.setBounds(275, 200, 100, 100);
+        panel.add(colorsScreen);
+        colorsScreen.setOpaque(false);
+        colorsScreen.addActionListener(this);
 
         viewScreen = new JButton("x");
         viewScreen.setBounds(275, 120, 100, 100);
@@ -398,6 +406,13 @@ public class ERoom extends JFrame implements ActionListener {
             }
         }
 
+        if (event.getSource() == colorsScreen) {
+            if (wall.getVisWall() % 4 == 3) {
+                wall.setVisWall(-6);
+                wall.redraw();
+            }
+        }
+
         if (event.getSource() == viewScreen) {
             if (wall.getVisWall() % 4 == 1) {
                 wall.setVisWall(-1);
@@ -447,143 +462,148 @@ public class ERoom extends JFrame implements ActionListener {
 
         if (event.getSource() == greenButs) {
             if (wall.getVisWall() % 4 == 2) {
-                    wall.setVisWall(-4);
-                    wall.redraw();
+                wall.setVisWall(-4);
+                wall.redraw();
             }
         }
 
-            //buttons on wall -2
-            if (event.getSource() == exitScreen2) {
-                if (wall.getVisWall() == -2) {
-                    wall.setVisWall(1);
-                    wall.redraw();
-                }
+        //buttons on wall -2
+        if (event.getSource() == exitScreen2) {
+            if (wall.getVisWall() == -2) {
+                wall.setVisWall(1);
+                wall.redraw();
             }
+            //allows the same button to be used for exiting the wall 3 color screen
+            else if (wall.getVisWall() == -6) {
+                wall.setVisWall(3);
+                wall.redraw();
+            }
+        }
 
-            if (event.getSource() == arrow) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 1 && wall.getNum2() == 2 &&
-                            wall.getNum3() == 3) {
-                        wall.passedGreen(true);
-                    } else {
-                        wall.setNum1(0);
-                        wall.setNum2(0);
-                        wall.setNum3(0);
-                    }
-                    wall.redraw();
+        if (event.getSource() == arrow) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 1 && wall.getNum2() == 2 &&
+                        wall.getNum3() == 3) {
+                    wall.passedGreen(true);
+                } else {
+                    wall.setNum1(0);
+                    wall.setNum2(0);
+                    wall.setNum3(0);
                 }
+                wall.redraw();
             }
+        }
 
-            if (event.getSource() == g1) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 0) {
-                        wall.setNum1(1);
-                    } else if (wall.getNum2() == 0) {
-                        wall.setNum2(1);
-                    } else if (wall.getNum3() == 0) {
-                        wall.setNum3(1);
-                    }
-                    wall.redraw();
+        if (event.getSource() == g1) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 0) {
+                    wall.setNum1(1);
+                } else if (wall.getNum2() == 0) {
+                    wall.setNum2(1);
+                } else if (wall.getNum3() == 0) {
+                    wall.setNum3(1);
                 }
+                wall.redraw();
             }
-            if (event.getSource() == g2) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 0) {
-                        wall.setNum1(2);
-                    } else if (wall.getNum2() == 0) {
-                        wall.setNum2(2);
-                    } else if (wall.getNum3() == 0) {
-                        wall.setNum3(2);
-                    }
-                    wall.redraw();
+        }
+        if (event.getSource() == g2) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 0) {
+                    wall.setNum1(2);
+                } else if (wall.getNum2() == 0) {
+                    wall.setNum2(2);
+                } else if (wall.getNum3() == 0) {
+                    wall.setNum3(2);
                 }
+                wall.redraw();
             }
-            if (event.getSource() == g3) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 0) {
-                        wall.setNum1(3);
-                    } else if (wall.getNum2() == 0) {
-                        wall.setNum2(3);
-                    } else if (wall.getNum3() == 0) {
-                        wall.setNum3(3);
-                    }
-                    wall.redraw();
+        }
+        if (event.getSource() == g3) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 0) {
+                    wall.setNum1(3);
+                } else if (wall.getNum2() == 0) {
+                    wall.setNum2(3);
+                } else if (wall.getNum3() == 0) {
+                    wall.setNum3(3);
                 }
+                wall.redraw();
             }
-            if (event.getSource() == g4) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 0) {
-                        wall.setNum1(4);
-                    } else if (wall.getNum2() == 0) {
-                        wall.setNum2(4);
-                    } else if (wall.getNum3() == 0) {
-                        wall.setNum3(4);
-                    }
-                    wall.redraw();
+        }
+        if (event.getSource() == g4) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 0) {
+                    wall.setNum1(4);
+                } else if (wall.getNum2() == 0) {
+                    wall.setNum2(4);
+                } else if (wall.getNum3() == 0) {
+                    wall.setNum3(4);
                 }
+                wall.redraw();
             }
+        }
 
-            if (event.getSource() == g5) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 0) {
-                        wall.setNum1(5);
-                    } else if (wall.getNum2() == 0) {
-                        wall.setNum2(5);
-                    } else if (wall.getNum3() == 0) {
-                        wall.setNum3(5);
-                    }
+        if (event.getSource() == g5) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 0) {
+                    wall.setNum1(5);
+                } else if (wall.getNum2() == 0) {
+                    wall.setNum2(5);
+                } else if (wall.getNum3() == 0) {
+                    wall.setNum3(5);
+                }
 
-                    wall.redraw();
-                }
+                wall.redraw();
             }
-            if (event.getSource() == g6) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 0) {
-                        wall.setNum1(6);
-                    } else if (wall.getNum2() == 0) {
-                        wall.setNum2(6);
-                    } else if (wall.getNum3() == 0) {
-                        wall.setNum3(6);
-                    }
-                    wall.redraw();
+        }
+        if (event.getSource() == g6) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 0) {
+                    wall.setNum1(6);
+                } else if (wall.getNum2() == 0) {
+                    wall.setNum2(6);
+                } else if (wall.getNum3() == 0) {
+                    wall.setNum3(6);
                 }
+                wall.redraw();
             }
-            if (event.getSource() == g7) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 0) {
-                        wall.setNum1(7);
-                    } else if (wall.getNum2() == 0) {
-                        wall.setNum2(7);
-                    } else if (wall.getNum3() == 0) {
-                        wall.setNum3(7);
-                    }
-                    wall.redraw();
+        }
+        if (event.getSource() == g7) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 0) {
+                    wall.setNum1(7);
+                } else if (wall.getNum2() == 0) {
+                    wall.setNum2(7);
+                } else if (wall.getNum3() == 0) {
+                    wall.setNum3(7);
                 }
+                wall.redraw();
             }
-            if (event.getSource() == g8) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 0) {
-                        wall.setNum1(8);
-                    } else if (wall.getNum2() == 0) {
-                        wall.setNum2(8);
-                    } else if (wall.getNum3() == 0) {
-                        wall.setNum3(8);
-                    }
-                    wall.redraw();
+        }
+        if (event.getSource() == g8) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 0) {
+                    wall.setNum1(8);
+                } else if (wall.getNum2() == 0) {
+                    wall.setNum2(8);
+                } else if (wall.getNum3() == 0) {
+                    wall.setNum3(8);
                 }
+                wall.redraw();
             }
-            if (event.getSource() == g9) {
-                if (wall.getVisWall() == -4) {
-                    if (wall.getNum1() == 0) {
-                        wall.setNum1(9);
-                    } else if (wall.getNum2() == 0) {
-                        wall.setNum2(9);
-                    } else if (wall.getNum3() == 0) {
-                        wall.setNum3(9);
-                    }
-                    wall.redraw();
+        }
+        if (event.getSource() == g9) {
+            if (wall.getVisWall() == -4) {
+                if (wall.getNum1() == 0) {
+                    wall.setNum1(9);
+                } else if (wall.getNum2() == 0) {
+                    wall.setNum2(9);
+                } else if (wall.getNum3() == 0) {
+                    wall.setNum3(9);
                 }
+                wall.redraw();
             }
+        }
 
         if (event.getSource() == fleet1) {
             if (wall.getVisWall() == -2) {
@@ -592,99 +612,99 @@ public class ERoom extends JFrame implements ActionListener {
             }
         }
 
-            if (event.getSource() == fleet2) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(2);
-                    wall.redraw();
-                }
+        if (event.getSource() == fleet2) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(2);
+                wall.redraw();
             }
-            if (event.getSource() == fleet3) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(3);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet4) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(4);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet5) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(5);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet6) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(6);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet7) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(7);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet8) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(8);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet9) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(9);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet11) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(11);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet12) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(12);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet13) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(13);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet14) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(14);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == fleet16) {
-                if (wall.getVisWall() == -2) {
-                    wall.setFleet(16);
-                    wall.redraw();
-                }
-            }
-            if (event.getSource() == clearFleet) {
-                if (wall.getVisWall() == -2) {
-                    wall.clearFleet();
-                    wall.redraw();
-                }
-            }
-            if (wall.getFleetPuzzle())
-                inv.setClueOne();
-            if (wall.getConsolePuzzle())
-                inv.setClueFour();
-            inv.redrawInv();
-
-
         }
+        if (event.getSource() == fleet3) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(3);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet4) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(4);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet5) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(5);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet6) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(6);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet7) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(7);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet8) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(8);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet9) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(9);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet11) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(11);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet12) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(12);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet13) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(13);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet14) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(14);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == fleet16) {
+            if (wall.getVisWall() == -2) {
+                wall.setFleet(16);
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == clearFleet) {
+            if (wall.getVisWall() == -2) {
+                wall.clearFleet();
+                wall.redraw();
+            }
+        }
+        if (wall.getFleetPuzzle())
+            inv.setClueOne();
+        if (wall.getConsolePuzzle())
+            inv.setClueFour();
+        inv.redrawInv();
+
+
     }
+}
 
 
 

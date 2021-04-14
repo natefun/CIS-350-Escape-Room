@@ -6,23 +6,44 @@ import java.awt.*;
 
 public class Inventory extends JPanel {
     JLabel clue1;
-    boolean noteInv,coldOneInv, clueOne, clueTwo, clueThree, clueFour, clueFive, clueSix, cardInv = false;
+    boolean noteInv, coldOneInv, clueOne, clueTwo, clueThree, clueFour, clueFive, clueSix, cardInv = false;
 
     public void setNoteInv() {
         noteInv = true;
     }
+
     public void setColdOneInv() {
         coldOneInv = true;
     }
-    public void setClueOne() {clueOne = true;}
-    public void setClueTwo() {clueTwo = true;}
-    public void setClueThree() {clueThree = true;}
-    public void setClueFour() {clueFour = true;}
-    public void setClueFive() {clueFive = true;}
-    public void setClueSix() {clueSix = true;}
-    //Sets the value that determines if the access card is in the inventory
-    public void setCardInv() {cardInv = true;}
 
+    public void setClueOne() {
+        clueOne = true;
+    }
+
+    public void setClueTwo() {
+        clueTwo = true;
+    }
+
+    public void setClueThree() {
+        clueThree = true;
+    }
+
+    public void setClueFour() {
+        clueFour = true;
+    }
+
+    public void setClueFive() {
+        clueFive = true;
+    }
+
+    public void setClueSix() {
+        clueSix = true;
+    }
+
+    //Sets the value that determines if the access card is in the inventory
+    public void setCardInv() {
+        cardInv = true;
+    }
 
 
     public static void main(String[] args) {
@@ -37,10 +58,10 @@ public class Inventory extends JPanel {
 
         super.paintComponent(g);
         g.setColor(Color.BLACK);
-        g.fillRect(10,10, 550,300);
+        g.fillRect(10, 10, 550, 300);
 
         g.setColor(new Color(198, 111, 89, 67));
-        g.fillRect(570,10, 550, 300);
+        g.fillRect(570, 10, 550, 300);
 
         Font heading = new Font("Arial", Font.BOLD, 40);
         Font clues = new Font("Arial", Font.PLAIN, 20);
@@ -48,29 +69,29 @@ public class Inventory extends JPanel {
         g.setFont(heading);
         g.drawString("Clues", 230, 40);
         g.setFont(clues);
-        if(clueOne)
+        if (clueOne)
             g.drawString("The exit code include the digits 3, 7, and 9.", 20, 80);
-        if(clueTwo)
+        if (clueTwo)
             g.drawString("The exit code include the digits 8, 5, and 5.", 20, 110);
-        if(clueThree)
+        if (clueThree)
             g.drawString("The exit code include the digits 8, 7, and 4.", 20, 140);
-        if(clueFour)
+        if (clueFour)
             g.drawString("The first five digits are entered in ascending order.", 20, 170);
-        if(clueFive)
+        if (clueFive)
             g.drawString("The last four digits are in descending order.", 20, 200);
-        if(clueSix)
+        if (clueSix)
             g.drawString("The first five digits are prime numbers.", 20, 230);
 
 
         g.setColor(Color.BLACK);
 
         g.setFont(heading);
-        g.drawString("Inventory", 580,50);
-        if(coldOneInv) {
+        g.drawString("Inventory", 580, 50);
+        if (coldOneInv) {
             Image item = new ImageIcon("coldOne.png").getImage();
             g.drawImage(item, 580, 60, this);
         }
-        if(noteInv) {
+        if (noteInv) {
             Image note = new ImageIcon("noteInv.png").getImage();
             g.drawImage(note, 680, 60, this);
         }
@@ -86,15 +107,12 @@ public class Inventory extends JPanel {
         g.drawString("8:34", 1000, 290);
 
 
-
-
-
-
 //        clue1 = new JLabel("The exit code include the digits 5, 4, and 2");
 //        clue1.setBounds(10, 10, 500, 250);
 
 
     }
+
     public void redrawInv() {
         repaint();
     }
