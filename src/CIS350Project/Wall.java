@@ -96,6 +96,9 @@ public class Wall extends JPanel {
     public void setOne() {
         coldOneWall = false;
     }
+    public void setCard() {
+        card = false;
+    }
     public boolean getConsolePuzzle() {return consolePuzzle;}
     public boolean getFleetPuzzle() {
         if (fleetPuzzle)

@@ -391,7 +391,7 @@ public class ERoom extends JFrame implements ActionListener {
         //action listener for picking up the access card
         if (event.getSource() == accessCard) {
             if (wall.getVisWall() % 4 == 3) {
-                wall.setOne();
+                wall.setCard();
                 wall.redraw();
                 inv.setCardInv();
                 inv.redrawInv();
