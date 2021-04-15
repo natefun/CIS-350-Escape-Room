@@ -410,7 +410,7 @@ public class ERoom extends JFrame implements ActionListener {
         }
 
         if (event.getSource() == viewBoard) {
-            if (wall.getVisWall() == 1) {
+            if (wall.getVisWall() % 4 == 1) {
                 wall.setVisWall(-2);
                 wall.redraw();
             }
