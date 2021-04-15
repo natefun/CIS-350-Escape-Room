@@ -7,7 +7,6 @@ import java.util.Arrays;
 public class Wall extends JPanel {
     int visWall = 1;
     boolean note = true;
-    boolean coldOneWall = true;
     int centerConsole1 = 1;
     int centerConsole2 = 2;
     int centerConsole3 = 3;
@@ -107,9 +106,7 @@ public class Wall extends JPanel {
         note = false;
     }
 
-    public void setOne() {
-        coldOneWall = false;
-    }
+
 
     public void setCard() {
         card = false;
@@ -343,7 +340,7 @@ public class Wall extends JPanel {
             }
             if (Arrays.equals(fleet, fleetCode)) {
                 Image image1 = new ImageIcon("BoardCode.png").getImage();
-                g.drawImage(image1, 365, 103, this);
+                g.drawImage(image1, 365, 112, this);
                 fleetPuzzle = true;
             }
 
@@ -355,10 +352,7 @@ public class Wall extends JPanel {
                 Image note = new ImageIcon("noteHidden.png").getImage();
                 g.drawImage(note, 355, 300, this);
             }
-            if (coldOneWall) {
-                Image note = new ImageIcon("coldOneWall.png").getImage();
-                g.drawImage(note, 700, 159, this);
-            }
+
 
 
         } else if (visWall % 4 == 2) {

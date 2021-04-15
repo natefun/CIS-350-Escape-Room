@@ -18,7 +18,7 @@ public class ERoom extends JFrame implements ActionListener {
     private final JButton turnLeft;
     private JButton askForHint;
     private final JButton pickNote;
-    private final JButton coldOne;
+
     private final JButton viewScreen;
     private final JButton viewBoard;
     private final JButton exitScreen;
@@ -111,11 +111,7 @@ public class ERoom extends JFrame implements ActionListener {
         pickNote.setOpaque(false);
         pickNote.addActionListener(this);
 
-        coldOne = new JButton(".");
-        coldOne.setBounds(765, 174, 30, 80);
-        panel.add(coldOne);
-        coldOne.setOpaque(false);
-        coldOne.addActionListener(this);
+
 
         //button to pick up the access card
         accessCard = new JButton(".");
@@ -250,85 +246,85 @@ public class ERoom extends JFrame implements ActionListener {
         exitScreen2.addActionListener(this);
 
         fleet1 = new JButton();
-        fleet1.setBounds(459, 161, 10, 10);
+        fleet1.setBounds(459, 170, 10, 10);
         panel.add(fleet1);
         fleet1.setOpaque(false);
         fleet1.addActionListener(this);
 
         fleet2 = new JButton();
-        fleet2.setBounds(557, 161, 10, 10);
+        fleet2.setBounds(557, 170, 10, 10);
         panel.add(fleet2);
         fleet2.setOpaque(false);
         fleet2.addActionListener(this);
 
         fleet3 = new JButton();
-        fleet3.setBounds(651, 161, 10, 10);
+        fleet3.setBounds(651, 170, 10, 10);
         panel.add(fleet3);
         fleet3.setOpaque(false);
         fleet3.addActionListener(this);
 
         fleet4 = new JButton();
-        fleet4.setBounds(748, 161, 10, 10);
+        fleet4.setBounds(748, 170, 10, 10);
         panel.add(fleet4);
         fleet4.setOpaque(false);
         fleet4.addActionListener(this);
 
         fleet5 = new JButton();
-        fleet5.setBounds(459, 266, 10, 10);
+        fleet5.setBounds(459, 275, 10, 10);
         panel.add(fleet5);
         fleet5.setOpaque(false);
         fleet5.addActionListener(this);
 
         fleet6 = new JButton();
-        fleet6.setBounds(557, 266, 10, 10);
+        fleet6.setBounds(557, 275, 10, 10);
         panel.add(fleet6);
         fleet6.setOpaque(false);
         fleet6.addActionListener(this);
 
         fleet7 = new JButton();
-        fleet7.setBounds(651, 266, 10, 10);
+        fleet7.setBounds(651, 275, 10, 10);
         panel.add(fleet7);
         fleet7.setOpaque(false);
         fleet7.addActionListener(this);
 
         fleet8 = new JButton();
-        fleet8.setBounds(748, 266, 10, 10);
+        fleet8.setBounds(748, 275, 10, 10);
         panel.add(fleet8);
         fleet8.setOpaque(false);
         fleet8.addActionListener(this);
 
         fleet9 = new JButton();
-        fleet9.setBounds(459, 375, 10, 10);
+        fleet9.setBounds(459, 384, 10, 10);
         panel.add(fleet9);
         fleet9.setOpaque(false);
         fleet9.addActionListener(this);
 
         fleet11 = new JButton();
-        fleet11.setBounds(651, 375, 10, 10);
+        fleet11.setBounds(651, 384, 10, 10);
         panel.add(fleet11);
         fleet11.setOpaque(false);
         fleet11.addActionListener(this);
 
         fleet12 = new JButton();
-        fleet12.setBounds(748, 375, 10, 10);
+        fleet12.setBounds(748, 384, 10, 10);
         panel.add(fleet12);
         fleet12.setOpaque(false);
         fleet12.addActionListener(this);
 
         fleet13 = new JButton();
-        fleet13.setBounds(459, 479, 10, 10);
+        fleet13.setBounds(459, 488, 10, 10);
         panel.add(fleet13);
         fleet13.setOpaque(false);
         fleet13.addActionListener(this);
 
         fleet14 = new JButton();
-        fleet14.setBounds(557, 479, 10, 10);
+        fleet14.setBounds(557, 488, 10, 10);
         panel.add(fleet14);
         fleet14.setOpaque(false);
         fleet14.addActionListener(this);
 
         fleet16 = new JButton();
-        fleet16.setBounds(748, 479, 10, 10);
+        fleet16.setBounds(748, 488, 10, 10);
         panel.add(fleet16);
         fleet16.setOpaque(false);
         fleet16.addActionListener(this);
@@ -387,14 +383,7 @@ public class ERoom extends JFrame implements ActionListener {
                 inv.redrawInv();
             }
         }
-        if (event.getSource() == coldOne) {
-            if (wall.getVisWall() % 4 == 1) {
-                wall.setOne();
-                wall.redraw();
-                inv.setColdOneInv();
-                inv.redrawInv();
-            }
-        }
+
 
         //action listener for picking up the access card
         if (event.getSource() == accessCard) {
