@@ -557,9 +557,10 @@ public class ERoom extends JFrame implements ActionListener {
             if (wall.getVisWall() == -2) {
                 wall.setVisWall(1);
                 wall.redraw();
-            }
-            //allows the same button to be used for exiting the wall 3 color screen
-            else if (wall.getVisWall() == -6) {
+            } else if (wall.getVisWall() == -6) { //allows the same button to be used for exiting the wall 3 color screen
+                wall.setVisWall(3);
+                wall.redraw();
+            } else if (wall.getVisWall() == -7) {
                 wall.setVisWall(3);
                 wall.redraw();
             }
