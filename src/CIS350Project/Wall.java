@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
 
+/**
+ * Controls all the logic and graphics for the wall being displayed
+ */
 public class Wall extends JPanel {
     int visWall = 1;
     boolean note = true;
@@ -173,7 +176,9 @@ public class Wall extends JPanel {
         note = false;
     }
 
-
+    /**
+     * Sets the variable note to false so that it is no longer visible after it is picked up.
+     */
     public void setCard() {
         card = false;
     }
@@ -189,6 +194,9 @@ public class Wall extends JPanel {
             return false;
     }
 
+    /**
+     * Allows you to enter the red digit of the code
+     */
     public void redPressed(){
         if(cardInserted) {
             if (digitNum <= 3) {
@@ -206,6 +214,9 @@ public class Wall extends JPanel {
         }
     }
 
+    /**
+     * Allows you to enter the blue digit of the code
+     */
     public void bluePressed(){
         if(cardInserted) {
             if (digitNum <= 3) {
@@ -223,6 +234,9 @@ public class Wall extends JPanel {
         }
     }
 
+    /**
+     * Allows you to enter the green digit of the code
+     */
     public void greenPressed(){
         if(cardInserted) {
             if (digitNum <= 3) {
@@ -240,6 +254,9 @@ public class Wall extends JPanel {
         }
     }
 
+    /**
+     * Allows you to enter the yellow digit of the code
+     */
     public void yellowPressed(){
         if(cardInserted) {
             if (digitNum <= 3) {
@@ -257,11 +274,17 @@ public class Wall extends JPanel {
         }
     }
 
+    /**
+     * Lets the game know that the acess card has been inserted into the computer
+     */
     public void cardInserted(){
         cardInserted = true;
     }
 
 
+    /**
+     * Main method sets up gui
+     */
     public static void main(String[] args) {
         JFrame f = new JFrame();
         Wall lWall = new Wall();
@@ -270,6 +293,9 @@ public class Wall extends JPanel {
         f.setVisible(true);
     }
 
+    /**
+     * All the logic for determining which graphics to show on the screen
+     */
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
@@ -524,6 +550,9 @@ public class Wall extends JPanel {
         }
     }
 
+    /**
+     * Redraws all the graphics on the screen
+     */
     public void redraw() {
         repaint();
     }
