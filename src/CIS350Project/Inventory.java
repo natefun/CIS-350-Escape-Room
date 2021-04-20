@@ -45,6 +45,12 @@ public class Inventory extends JPanel {
         cardInv = true;
     }
 
+    //removes the card from inventory
+    public void removeCardInv() {
+        cardInv = false;
+    }
+
+
 
     public static void main(String[] args) {
         JFrame f = new JFrame();

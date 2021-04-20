@@ -29,6 +29,17 @@ public class Wall extends JPanel {
     boolean lightGreen = false;
     boolean lightYellow = false;
 
+    //color buttons
+    boolean pressRed = false;
+    boolean pressBlue = false;
+    boolean pressGreen = false;
+    boolean pressYellow = false;
+    boolean cardInserted = false;
+    int digitNum = 0;
+    int[] colorCode = new int[4];
+
+
+
     /**
      * This method updates variable visWall.  This controls which wall the user sees.
      *
@@ -71,6 +82,7 @@ public class Wall extends JPanel {
 
     /**
      * this sets the number for slot one in access cod
+     *
      * @param newNum1
      */
     public void setNum1(int newNum1) {
@@ -79,6 +91,7 @@ public class Wall extends JPanel {
 
     /**
      * this returns the num to be checked
+     *
      * @return num1
      */
     public int getNum1() {
@@ -87,6 +100,7 @@ public class Wall extends JPanel {
 
     /**
      * this sets the number for slot two in access code
+     *
      * @param newNum2
      */
     public void setNum2(int newNum2) {
@@ -95,6 +109,7 @@ public class Wall extends JPanel {
 
     /**
      * this returns the num to be checked
+     *
      * @return num2
      */
     public int getNum2() {
@@ -103,6 +118,7 @@ public class Wall extends JPanel {
 
     /**
      * this sets the number for slot three in access code
+     *
      * @param newNum3
      */
     public void setNum3(int newNum3) {
@@ -111,6 +127,7 @@ public class Wall extends JPanel {
 
     /**
      * this returns the num to be checked
+     *
      * @return num3
      */
     public int getNum3() {
@@ -120,12 +137,13 @@ public class Wall extends JPanel {
     /**
      * this checks the nums returned for correct code,
      * if false it resets the nums and the images corresponding
+     *
      * @return a boolean passedG
      */
     public boolean getPassedG() {
         if (getNum1() == 1 && getNum2() == 2 && getNum3() == 3) {
             passedG = true;
-        }else{
+        } else {
             setNum1(0);
             setNum2(0);
             setNum3(0);
@@ -136,6 +154,7 @@ public class Wall extends JPanel {
 
     /**
      * this method sets the provided fleet number to one if it is not already at 1.
+     *
      * @param num the fleet number to be set to 1.
      */
     public void setFleet(int num) {
@@ -151,6 +170,7 @@ public class Wall extends JPanel {
 
     /**
      * This method returns the number of the wall currently visible
+     *
      * @return the number of the wall currently visible.
      */
     public int getVisWall() {
@@ -163,7 +183,6 @@ public class Wall extends JPanel {
     public void setNote() {
         note = false;
     }
-
 
 
     public void setCard() {
@@ -179,6 +198,86 @@ public class Wall extends JPanel {
             return true;
         else
             return false;
+    }
+
+    public void startColorSequence() {
+        lightRed = true;
+//        redraw();
+//
+////        lightRed = false;
+//        redraw();
+    }
+
+    public void redPressed(){
+        if(cardInserted) {
+            if (digitNum <= 3) {
+                colorCode[digitNum] = 0;
+            } else {
+                digitNum = 0;
+                colorCode[digitNum] = 0;
+            }
+            digitNum++;
+//            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+        }
+        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+            setVisWall(3);
+            redraw();
+        }
+    }
+
+    public void bluePressed(){
+        if(cardInserted) {
+            if (digitNum <= 3) {
+                colorCode[digitNum] = 1;
+            } else {
+                digitNum = 0;
+                colorCode[digitNum] = 1;
+            }
+            digitNum++;
+//            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+        }
+        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+            setVisWall(3);
+            redraw();
+        }
+    }
+
+    public void greenPressed(){
+        if(cardInserted) {
+            if (digitNum <= 3) {
+                colorCode[digitNum] = 2;
+            } else {
+                digitNum = 0;
+                colorCode[digitNum] = 2;
+            }
+            digitNum++;
+//            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+        }
+        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+            setVisWall(3);
+            redraw();
+        }
+    }
+
+    public void yellowPressed(){
+        if(cardInserted) {
+            if (digitNum <= 3) {
+                colorCode[digitNum] = 3;
+            } else {
+                digitNum = 0;
+                colorCode[digitNum] = 3;
+            }
+            digitNum++;
+//            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+        }
+        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+            setVisWall(3);
+            redraw();
+        }
+    }
+
+    public void cardInserted(){
+        cardInserted = true;
     }
 
 
@@ -431,10 +530,6 @@ public class Wall extends JPanel {
         } else if (visWall == -6) {
             Image image6 = new ImageIcon("ColorsCloseUp.png").getImage();
             g.drawImage(image6, 0, 0, this);
-//            int[] colorSeq = new int[10];
-//            for(int i = 0; i < 9; i++){
-//                colorSeq[i] = (int) (Math.random() * 4);
-//            }
             if (lightRed == true) {
                 Image image3 = new ImageIcon("RedOverlay.png").getImage();
                 g.drawImage(image3, 0, 0, this);
@@ -448,6 +543,13 @@ public class Wall extends JPanel {
                 Image image3 = new ImageIcon("YellowOverlay.png").getImage();
                 g.drawImage(image3, 0, 0, this);
             }
+        }else if (visWall == -7) {
+            Image image6 = new ImageIcon("CardReaderZoom.png").getImage();
+            g.drawImage(image6, 0, 0, this);
+            colorCode[0] = -1;
+            colorCode[1] = -1;
+            colorCode[2] = -1;
+            colorCode[3] = -1;
         } else {
             Image image = new ImageIcon("placeholderwall0.png").getImage();
             g.drawImage(image, 0, 0, this);
