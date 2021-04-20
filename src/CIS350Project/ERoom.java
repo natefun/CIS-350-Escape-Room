@@ -51,6 +51,8 @@ public class ERoom extends JFrame implements ActionListener {
     private final JButton accessCard; //button for picking up access card
     private final JButton colorsScreen; //button for picking up access card
 
+    private final JButton keypad;
+
 
     public static void main(String[] args) {
         ERoom gui = new ERoom();
@@ -334,6 +336,13 @@ public class ERoom extends JFrame implements ActionListener {
         panel.add(clearFleet);
         clearFleet.setOpaque(false);
         clearFleet.addActionListener(this);
+
+        //for wall0
+        keypad = new JButton("kp");
+        keypad.setBounds(663, 180, 80, 80);
+        panel.add(keypad);
+        keypad.setOpaque(false);
+        keypad.addActionListener(this);
 
 
     }
@@ -682,6 +691,12 @@ public class ERoom extends JFrame implements ActionListener {
         if (event.getSource() == clearFleet) {
             if (wall.getVisWall() == -2) {
                 wall.clearFleet();
+                wall.redraw();
+            }
+        }
+        if (event.getSource() == keypad) {
+            if (wall.getVisWall() % 4 == 0) {
+                //do something here
                 wall.redraw();
             }
         }
