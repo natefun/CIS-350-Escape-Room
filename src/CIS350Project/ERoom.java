@@ -696,7 +696,37 @@ public class ERoom extends JFrame implements ActionListener {
         }
         if (event.getSource() == keypad) {
             if (wall.getVisWall() % 4 == 0) {
-                //do something here
+//                JOptionPane.showMessageDialog(this, "Enter a valid State or Month and Day");
+                Object[] options = {"Yes, please",
+                        "No, thanks",
+                        "No eggs, no ham!"};
+//                int n = JOptionPane.showOptionDialog(this,)
+
+//                int n = JOptionPane.showOptionDialog(this,
+//                        "Would you like some green eggs to go "
+//                                + "with that ham?",
+//                        "A Silly Question",
+//                        JOptionPane.YES_NO_CANCEL_OPTION,
+//                        JOptionPane.QUESTION_MESSAGE,
+//                        null,
+//                        options,
+//                        options[2]);
+
+                Object[] possibilities = {"ham", "spam", "yam"};
+                String s = (String)JOptionPane.showInputDialog(
+                        this,
+                        "Enter the final Code",
+                        "Exit Keypad",
+                        JOptionPane.PLAIN_MESSAGE);
+                String t = "355779884";
+
+
+//If a string was returned, say so.
+                if (s.equals(t)) {
+                    JOptionPane.showMessageDialog(this, "You Win");
+                } else {
+                    JOptionPane.showMessageDialog(this, "The door does not open.");
+                }
                 wall.redraw();
             }
         }
