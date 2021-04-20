@@ -29,11 +29,18 @@ public class Wall extends JPanel {
     boolean lightGreen = false;
     boolean lightYellow = false;
 
-
+    /**
+     * This method updates variable visWall.  This controls which wall the user sees.
+     *
+     * @param visWall the wall that is currently being viewed.
+     */
     public void setVisWall(int visWall) {
         this.visWall = visWall;
     }
 
+    /**
+     * This method increments centerConsole1 until it reaches 4, then it resets to 1.
+     */
     public void setCenterConsole1() {
         if (centerConsole1 == 4)
             centerConsole1 = 1;
@@ -41,6 +48,9 @@ public class Wall extends JPanel {
             centerConsole1 = centerConsole1 + 1;
     }
 
+    /**
+     * This method increments centerConsole2 until it reaches 4, then it resets to 1.
+     */
     public void setCenterConsole2() {
         if (centerConsole2 == 4)
             centerConsole2 = 1;
@@ -48,6 +58,9 @@ public class Wall extends JPanel {
             centerConsole2 = centerConsole2 + 1;
     }
 
+    /**
+     * This method increments centerConsole3 until it reaches 4, then it resets to 1.
+     */
     public void setCenterConsole3() {
         if (centerConsole3 == 4)
             centerConsole3 = 1;
@@ -89,19 +102,32 @@ public class Wall extends JPanel {
         }
     }
 
+    /**
+     * this method sets the provided fleet number to one if it is not already at 1.
+     * @param num the fleet number to be set to 1.
+     */
     public void setFleet(int num) {
         fleet[num] = 1;
     }
 
+    /**
+     * This method resets the fleet array to empty.
+     */
     public void clearFleet() {
         fleet = new int[17];
     }
 
-
+    /**
+     * This method returns the number of the wall currently visible
+     * @return the number of the wall currently visible.
+     */
     public int getVisWall() {
         return visWall;
     }
 
+    /**
+     * Sets the variable note to false so that it is no longer visible after it is picked up.
+     */
     public void setNote() {
         note = false;
     }
