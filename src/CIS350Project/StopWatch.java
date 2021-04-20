@@ -39,7 +39,7 @@ public class StopWatch extends JPanel{
         timeLabel.setBounds(5,5,140,65);
         timeLabel.setFont(new Font("Verdana",Font.PLAIN,35));
         timeLabel.setBorder(BorderFactory.createBevelBorder(1));
-        timeLabel.setOpaque(true);
+        timeLabel.setOpaque(false);
         timeLabel.setHorizontalAlignment(JTextField.CENTER);
 
 

@@ -23,17 +23,6 @@ public class Wall extends JPanel {
     boolean fleetPuzzle = false;
     boolean card = true;
 
-    //determines which of the 4 colors lights up
-    boolean lightRed = false;
-    boolean lightBlue = false;
-    boolean lightGreen = false;
-    boolean lightYellow = false;
-
-    //color buttons
-    boolean pressRed = false;
-    boolean pressBlue = false;
-    boolean pressGreen = false;
-    boolean pressYellow = false;
     boolean cardInserted = false;
     int digitNum = 0;
     int[] colorCode = new int[4];
@@ -198,14 +187,6 @@ public class Wall extends JPanel {
             return true;
         else
             return false;
-    }
-
-    public void startColorSequence() {
-        lightRed = true;
-//        redraw();
-//
-////        lightRed = false;
-//        redraw();
     }
 
     public void redPressed(){
@@ -530,19 +511,6 @@ public class Wall extends JPanel {
         } else if (visWall == -6) {
             Image image6 = new ImageIcon("ColorsCloseUp.png").getImage();
             g.drawImage(image6, 0, 0, this);
-            if (lightRed == true) {
-                Image image3 = new ImageIcon("RedOverlay.png").getImage();
-                g.drawImage(image3, 0, 0, this);
-            } else if (lightBlue == true) {
-                Image image3 = new ImageIcon("BlueOverlay.png").getImage();
-                g.drawImage(image3, 0, 0, this);
-            } else if (lightGreen == true) {
-                Image image3 = new ImageIcon("GreenOverlay.png").getImage();
-                g.drawImage(image3, 0, 0, this);
-            } else if (lightYellow == true) {
-                Image image3 = new ImageIcon("YellowOverlay.png").getImage();
-                g.drawImage(image3, 0, 0, this);
-            }
         }else if (visWall == -7) {
             Image image6 = new ImageIcon("CardReaderZoom.png").getImage();
             g.drawImage(image6, 0, 0, this);

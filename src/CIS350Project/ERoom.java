@@ -116,7 +116,7 @@ public class ERoom extends JFrame implements ActionListener {
         pickNote = new JButton(".");
         pickNote.setBounds(405, 325, 60, 60);
         panel.add(pickNote);
-        pickNote.setOpaque(true);
+        pickNote.setOpaque(false);
         pickNote.addActionListener(this);
 
 
@@ -125,93 +125,93 @@ public class ERoom extends JFrame implements ActionListener {
         accessCard = new JButton(".");
         accessCard.setBounds(280, 410, 60, 60);
         panel.add(accessCard);
-        accessCard.setOpaque(true);
+        accessCard.setOpaque(false);
         accessCard.addActionListener(this);
 
         //shows screen closeup for colors
         colorsScreen = new JButton(".");
         colorsScreen.setBounds(275, 200, 100, 100);
         panel.add(colorsScreen);
-        colorsScreen.setOpaque(true);
+        colorsScreen.setOpaque(false);
         colorsScreen.addActionListener(this);
 
         //shows screen closeup for card
         cardScreen = new JButton("card3");
         cardScreen.setBounds(825, 140, 100, 80);
         panel.add(cardScreen);
-        cardScreen.setOpaque(true);
+        cardScreen.setOpaque(false);
         cardScreen.addActionListener(this);
 
         //inserts acess card into reader
         insertCard = new JButton("card3");
         insertCard.setBounds(425, 400, 350, 40);
         panel.add(insertCard);
-        insertCard.setOpaque(true);
+        insertCard.setOpaque(false);
         insertCard.addActionListener(this);
 
         //red code button
         redBtn = new JButton("3");
         redBtn.setBounds(425, 485, 40, 40);
         panel.add(redBtn);
-        redBtn.setOpaque(true);
+        redBtn.setOpaque(false);
         redBtn.addActionListener(this);
 
         //green code button
         grnBtn = new JButton("card3");
         grnBtn.setBounds(545, 485, 40, 40);
         panel.add(grnBtn);
-        grnBtn.setOpaque(true);
+        grnBtn.setOpaque(false);
         grnBtn.addActionListener(this);
 
         //blue code button
         bluBtn = new JButton("card3");
         bluBtn.setBounds(655, 485, 40, 40);
         panel.add(bluBtn);
-        bluBtn.setOpaque(true);
+        bluBtn.setOpaque(false);
         bluBtn.addActionListener(this);
 
         //yellow code button
         yelBtn = new JButton("card3");
         yelBtn.setBounds(755, 485, 40, 40);
         panel.add(yelBtn);
-        yelBtn.setOpaque(true);
+        yelBtn.setOpaque(false);
         yelBtn.addActionListener(this);
 
         viewScreen = new JButton("x");
         viewScreen.setBounds(275, 120, 100, 100);
         panel.add(viewScreen);
-        viewScreen.setOpaque(true);
+        viewScreen.setOpaque(false);
         viewScreen.addActionListener(this);
 
         viewBoard = new JButton("x");
         viewBoard.setBounds(790, 220, 170, 100);
         panel.add(viewBoard);
-        viewBoard.setOpaque(true);
+        viewBoard.setOpaque(false);
         viewBoard.addActionListener(this);
 
         //for screen close up//
         exitScreen = new JButton("x");
         exitScreen.setBounds(1120, 10, 30, 30);
         panel.add(exitScreen);
-        exitScreen.setOpaque(true);
+        exitScreen.setOpaque(false);
         exitScreen.addActionListener(this);
 
         consoleOne = new JButton();
         consoleOne.setBounds(390, 540, 60, 60);
         panel.add(consoleOne);
-        consoleOne.setOpaque(true);
+        consoleOne.setOpaque(false);
         consoleOne.addActionListener(this);
 
         consoleTwo = new JButton();
         consoleTwo.setBounds(560, 540, 60, 60);
         panel.add(consoleTwo);
-        consoleTwo.setOpaque(true);
+        consoleTwo.setOpaque(false);
         consoleTwo.addActionListener(this);
 
         consoleThree = new JButton();
         consoleThree.setBounds(720, 540, 60, 60);
         panel.add(consoleThree);
-        consoleThree.setOpaque(true);
+        consoleThree.setOpaque(false);
         consoleThree.addActionListener(this);
 
 
@@ -219,177 +219,177 @@ public class ERoom extends JFrame implements ActionListener {
         clock = new JButton("clock");
         clock.setBounds(760, 147, 58, 58);
         panel.add(clock);
-        clock.setOpaque(true);
+        clock.setOpaque(false);
         clock.addActionListener(this);
 
         greenButs = new JButton("Buts");
         greenButs.setBounds(533, 261, 120, 57);
         panel.add(greenButs);
-        greenButs.setOpaque(true);
+        greenButs.setOpaque(false);
         greenButs.addActionListener(this);
 
         arrow = new JButton("->");
         arrow.setBounds(996, 332, 120, 39);
         panel.add(arrow);
-        arrow.setOpaque(true);
+        arrow.setOpaque(false);
         arrow.addActionListener(this);
 
         g4 = new JButton(".");
         g4.setBounds(95, 430, 58, 58);
         panel.add(g4);
-        g4.setOpaque(true);
+        g4.setOpaque(false);
         g4.addActionListener(this);
 
         g9 = new JButton(".");
         g9.setBounds(217, 432, 58, 58);
         panel.add(g9);
-        g9.setOpaque(true);
+        g9.setOpaque(false);
         g9.addActionListener(this);
 
         g7 = new JButton(".");
         g7.setBounds(339, 432, 58, 58);
         panel.add(g7);
-        g7.setOpaque(true);
+        g7.setOpaque(false);
         g7.addActionListener(this);
 
         g1 = new JButton(".");
         g1.setBounds(461, 430, 58, 58);
         panel.add(g1);
-        g1.setOpaque(true);
+        g1.setOpaque(false);
         g1.addActionListener(this);
 
         g5 = new JButton(".");
         g5.setBounds(577, 428, 58, 58);
         panel.add(g5);
-        g5.setOpaque(true);
+        g5.setOpaque(false);
         g5.addActionListener(this);
 
         g6 = new JButton(".");
         g6.setBounds(698, 429, 58, 58);
         panel.add(g6);
-        g6.setOpaque(true);
+        g6.setOpaque(false);
         g6.addActionListener(this);
 
         g3 = new JButton(".");
         g3.setBounds(815, 426, 58, 58);
         panel.add(g3);
-        g3.setOpaque(true);
+        g3.setOpaque(false);
         g3.addActionListener(this);
 
         g8 = new JButton(".");
         g8.setBounds(938, 427, 58, 58);
         panel.add(g8);
-        g8.setOpaque(true);
+        g8.setOpaque(false);
         g8.addActionListener(this);
 
         g2 = new JButton(".");
         g2.setBounds(1062, 420, 58, 58);
         panel.add(g2);
-        g2.setOpaque(true);
+        g2.setOpaque(false);
         g2.addActionListener(this);
 
         //for board close up
         exitScreen2 = new JButton("x");
         exitScreen2.setBounds(1090, 30, 30, 30);
         panel.add(exitScreen2);
-        exitScreen2.setOpaque(true);
+        exitScreen2.setOpaque(false);
         exitScreen2.addActionListener(this);
 
         fleet1 = new JButton();
         fleet1.setBounds(459, 170, 10, 10);
         panel.add(fleet1);
-        fleet1.setOpaque(true);
+        fleet1.setOpaque(false);
         fleet1.addActionListener(this);
 
         fleet2 = new JButton();
         fleet2.setBounds(557, 170, 10, 10);
         panel.add(fleet2);
-        fleet2.setOpaque(true);
+        fleet2.setOpaque(false);
         fleet2.addActionListener(this);
 
         fleet3 = new JButton();
         fleet3.setBounds(651, 170, 10, 10);
         panel.add(fleet3);
-        fleet3.setOpaque(true);
+        fleet3.setOpaque(false);
         fleet3.addActionListener(this);
 
         fleet4 = new JButton();
         fleet4.setBounds(748, 170, 10, 10);
         panel.add(fleet4);
-        fleet4.setOpaque(true);
+        fleet4.setOpaque(false);
         fleet4.addActionListener(this);
 
         fleet5 = new JButton();
         fleet5.setBounds(459, 275, 10, 10);
         panel.add(fleet5);
-        fleet5.setOpaque(true);
+        fleet5.setOpaque(false);
         fleet5.addActionListener(this);
 
         fleet6 = new JButton();
         fleet6.setBounds(557, 275, 10, 10);
         panel.add(fleet6);
-        fleet6.setOpaque(true);
+        fleet6.setOpaque(false);
         fleet6.addActionListener(this);
 
         fleet7 = new JButton();
         fleet7.setBounds(651, 275, 10, 10);
         panel.add(fleet7);
-        fleet7.setOpaque(true);
+        fleet7.setOpaque(false);
         fleet7.addActionListener(this);
 
         fleet8 = new JButton();
         fleet8.setBounds(748, 275, 10, 10);
         panel.add(fleet8);
-        fleet8.setOpaque(true);
+        fleet8.setOpaque(false);
         fleet8.addActionListener(this);
 
         fleet9 = new JButton();
         fleet9.setBounds(459, 384, 10, 10);
         panel.add(fleet9);
-        fleet9.setOpaque(true);
+        fleet9.setOpaque(false);
         fleet9.addActionListener(this);
 
         fleet11 = new JButton();
         fleet11.setBounds(651, 384, 10, 10);
         panel.add(fleet11);
-        fleet11.setOpaque(true);
+        fleet11.setOpaque(false);
         fleet11.addActionListener(this);
 
         fleet12 = new JButton();
         fleet12.setBounds(748, 384, 10, 10);
         panel.add(fleet12);
-        fleet12.setOpaque(true);
+        fleet12.setOpaque(false);
         fleet12.addActionListener(this);
 
         fleet13 = new JButton();
         fleet13.setBounds(459, 488, 10, 10);
         panel.add(fleet13);
-        fleet13.setOpaque(true);
+        fleet13.setOpaque(false);
         fleet13.addActionListener(this);
 
         fleet14 = new JButton();
         fleet14.setBounds(557, 488, 10, 10);
         panel.add(fleet14);
-        fleet14.setOpaque(true);
+        fleet14.setOpaque(false);
         fleet14.addActionListener(this);
 
         fleet16 = new JButton();
         fleet16.setBounds(748, 488, 10, 10);
         panel.add(fleet16);
-        fleet16.setOpaque(true);
+        fleet16.setOpaque(false);
         fleet16.addActionListener(this);
 
         clearFleet = new JButton();
         clearFleet.setBounds(83, 180, 155, 50);
         panel.add(clearFleet);
-        clearFleet.setOpaque(true);
+        clearFleet.setOpaque(false);
         clearFleet.addActionListener(this);
 
         //for wall0
         keypad = new JButton("kp");
         keypad.setBounds(663, 180, 80, 80);
         panel.add(keypad);
-        keypad.setOpaque(true);
+        keypad.setOpaque(false);
         keypad.addActionListener(this);
 
 
@@ -772,10 +772,6 @@ public class ERoom extends JFrame implements ActionListener {
             if (wall.getVisWall() == -2) {
                 wall.clearFleet();
                 wall.redraw();
-            }
-            if (wall.getVisWall() == -6) {
-                wall.startColorSequence();
-//                wall.redraw();
             }
         }
         if (event.getSource() == keypad) {
