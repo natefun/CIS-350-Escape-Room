@@ -366,7 +366,7 @@ public class Wall extends JPanel {
             //Displays the access card
             if (card) {
                 Image note = new ImageIcon("AccessCard.png").getImage();
-                g.drawImage(note, 300, 400, this);
+                g.drawImage(note, 230, 390, this);
             }
         } else if (visWall == -6) {
             Image image6 = new ImageIcon("ColorsCloseUp.png").getImage();
