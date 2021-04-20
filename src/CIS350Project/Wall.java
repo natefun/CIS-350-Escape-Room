@@ -102,6 +102,18 @@ public class Wall extends JPanel {
         }
     }
 
+    public boolean getPassedG() {
+        if (getNum1() == 1 && getNum2() == 2 && getNum3() == 3) {
+            passedG = true;
+        }else{
+            setNum1(0);
+            setNum2(0);
+            setNum3(0);
+            passedG = false;
+        }
+        return this.passedG;
+    }
+
     /**
      * this method sets the provided fleet number to one if it is not already at 1.
      * @param num the fleet number to be set to 1.

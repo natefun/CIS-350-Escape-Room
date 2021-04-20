@@ -480,17 +480,10 @@ public class ERoom extends JFrame implements ActionListener {
 
         if (event.getSource() == arrow) {
             if (wall.getVisWall() == -4) {
-                if (wall.getNum1() == 1 && wall.getNum2() == 2 &&
-                        wall.getNum3() == 3) {
-                    wall.passedGreen(true);
-                } else {
-                    wall.setNum1(0);
-                    wall.setNum2(0);
-                    wall.setNum3(0);
+                wall.getPassedG();
                 }
                 wall.redraw();
             }
-        }
 
         if (event.getSource() == g1) {
             if (wall.getVisWall() == -4) {

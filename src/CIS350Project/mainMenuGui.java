@@ -11,19 +11,20 @@ public class mainMenuGui extends JFrame implements ActionListener {
 /** final for frame **/
   private final JFrame frame;
 
-    /** final for startButton */
+ /** final for startButton */
   private final JButton startButton;
-    /** final for leaderButton */
+ /** final for leaderButton */
 
-  private final JButton leaderButton;
-    /** final for loadButton */
+ private final JButton leaderButton;
+
+  /** final for loadButton */
   private final JButton loadButton;
 
 
   /** creates object room */
   public ERoom room;
 
-    /** creates object timer */
+  /** creates object timer */
   public StopWatch timer;
 
   private final JLabel label;
@@ -114,7 +115,6 @@ public class mainMenuGui extends JFrame implements ActionListener {
      *
      * @param e for button click
      */
-
     public void actionPerformed(ActionEvent e) {
         Object selc = e.getSource();
 
