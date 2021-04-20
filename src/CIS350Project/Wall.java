@@ -69,39 +69,59 @@ public class Wall extends JPanel {
     }
 
 
-    //for wall 2
+    /**
+     * this sets the number for slot one in access cod
+     * @param newNum1
+     */
     public void setNum1(int newNum1) {
         this.num1 = newNum1;
     }
 
+    /**
+     * this returns the num to be checked
+     * @return num1
+     */
     public int getNum1() {
         return this.num1;
     }
 
+    /**
+     * this sets the number for slot two in access code
+     * @param newNum2
+     */
     public void setNum2(int newNum2) {
         this.num2 = newNum2;
     }
 
+    /**
+     * this returns the num to be checked
+     * @return num2
+     */
     public int getNum2() {
         return this.num2;
     }
 
+    /**
+     * this sets the number for slot three in access code
+     * @param newNum3
+     */
     public void setNum3(int newNum3) {
         this.num3 = newNum3;
     }
 
+    /**
+     * this returns the num to be checked
+     * @return num3
+     */
     public int getNum3() {
         return this.num3;
     }
 
-    public void passedGreen(boolean passed) {
-        if (passed) {
-            passedG = true;
-        } else {
-            passedG = false;
-        }
-    }
-
+    /**
+     * this checks the nums returned for correct code,
+     * if false it resets the nums and the images corresponding
+     * @return a boolean passedG
+     */
     public boolean getPassedG() {
         if (getNum1() == 1 && getNum2() == 2 && getNum3() == 3) {
             passedG = true;
@@ -224,11 +244,12 @@ public class Wall extends JPanel {
                 consolePuzzle = true;
             }
 
-            //for wall 2
+            //zooms in the clock if viswall is set to -3
         } else if (visWall == -3) {
             Image image2 = new ImageIcon("clockZoom.png").getImage();
             g.drawImage(image2, 0, 0, this);
 
+            //zooms in on green buttons in viswall -4
         } else if (visWall == -4) {
             Image blank = new ImageIcon("blank.png").getImage();
             Image n1 = new ImageIcon("num1.png").getImage();
@@ -244,6 +265,7 @@ public class Wall extends JPanel {
             Image image3 = new ImageIcon("greenbutZoom.png").getImage();
             g.drawImage(image3, 0, 0, this);
 
+            //draws image for num1 for each number pressed
             if (num1 == 0) {
                 g.drawImage(blank, 180, 45, this);
             } else if (num1 == 1) {
@@ -266,7 +288,7 @@ public class Wall extends JPanel {
                 g.drawImage(n9, 180, 45, this);
             }
 
-
+            //draws image for num2 for each number pressed
             if (num2 == 0) {
                 g.drawImage(blank, 450, 45, this);
             } else if (num2 == 1) {
@@ -289,7 +311,7 @@ public class Wall extends JPanel {
                 g.drawImage(n9, 450, 45, this);
             }
 
-
+            //draws image for num3 for each number pressed
             if (num3 == 0) {
                 g.drawImage(blank, 720, 45, this);
             } else if (num3 == 1) {
@@ -311,7 +333,7 @@ public class Wall extends JPanel {
             } else if (num3 == 9) {
                 g.drawImage(n9, 720, 45, this);
             }
-
+            //image set if passedG equals true
             if (passedG) {
                 Image pass = new ImageIcon("greenbutpassed.png").getImage();
                 g.drawImage(pass, 0, 0, this);
@@ -392,7 +414,7 @@ public class Wall extends JPanel {
             }
 
 
-
+//set visWall to wall2
         } else if (visWall % 4 == 2) {
             Image image = new ImageIcon("placeholderwall2.png").getImage();
             g.drawImage(image, 0, 0, this);

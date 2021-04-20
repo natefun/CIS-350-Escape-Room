@@ -12,6 +12,10 @@ public class starsGui extends JPanel implements ActionListener {
     int x1 = x, x2 = x;
     int y1 = y, y2 = y;
 
+    /**
+     * create the stars
+     * @param g
+     */
     public void paintComponent(Graphics g){
        super.paintComponent(g);
         setBackground(Color.BLACK);
@@ -25,6 +29,10 @@ public class starsGui extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * changes the directions of the stars
+     * @param e
+     */
     public void actionPerformed(ActionEvent e){
         if (x1 > 0 && x1 < 900) {
                 x1 = x1 + speed;
@@ -64,7 +72,10 @@ public class starsGui extends JPanel implements ActionListener {
         }
     }
 
-
+    /**
+     * the main that creates the GUI
+     * @param args
+     */
     public static void main (String[] args){
         starsGui s = new starsGui();
         JFrame frame = new JFrame();
