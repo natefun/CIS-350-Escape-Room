@@ -183,10 +183,18 @@ public class Wall extends JPanel {
         card = false;
     }
 
+    /**
+     * Returns the value of consolePuzzle
+     * @return the value of consolePuzzle
+     */
     public boolean getConsolePuzzle() {
         return consolePuzzle;
     }
 
+    /**
+     * Returns the value of fleetPuzzle
+     * @return the value of fleetPuzzle
+     */
     public boolean getFleetPuzzle() {
         if (fleetPuzzle)
             return true;
@@ -444,7 +452,7 @@ public class Wall extends JPanel {
                 Image pass = new ImageIcon("greenbutpassed.png").getImage();
                 g.drawImage(pass, 0, 0, this);
             }
-
+        //zooms in on the fleet board puzzle and adds a fleet icon as buttons are clicked
         } else if (visWall == -2) {
             Image image = new ImageIcon("BoardCloseUp.png").getImage();
             g.drawImage(image, 0, 0, this);
@@ -504,13 +512,14 @@ public class Wall extends JPanel {
                 Image image1 = new ImageIcon("shipToken.png").getImage();
                 g.drawImage(image1, 679, 443, this);
             }
+            //Shows clue if all fleet values are correct
             if (Arrays.equals(fleet, fleetCode)) {
                 Image image1 = new ImageIcon("BoardCode.png").getImage();
                 g.drawImage(image1, 365, 112, this);
                 fleetPuzzle = true;
             }
 
-
+        //displays wall one if visWall if appropriate
         } else if (visWall % 4 == 1) {
             Image image = new ImageIcon("placeholderwall.png").getImage();
             g.drawImage(image, 0, 0, this);
