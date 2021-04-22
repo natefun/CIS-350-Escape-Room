@@ -76,11 +76,11 @@ public class Inventory extends JPanel {
         g.drawString("Clues", 230, 40);
         g.setFont(clues);
         if (clueOne)
-            g.drawString("The exit code include the digits 3, 7, and 9.", 20, 80);
+            g.drawString("The exit code includes the digits 3, 7, and 9.", 20, 80);
         if (clueTwo)
-            g.drawString("The exit code include the digits 8, 5, and 5.", 20, 110);
+            g.drawString("The exit code includes the digits 8, 5, and 5.", 20, 110);
         if (clueThree)
-            g.drawString("The exit code include the digits 8, 7, and 4.", 20, 140);
+            g.drawString("The exit code includes the digits 8, 7, and 4.", 20, 140);
         if (clueFour)
             g.drawString("The first five digits are entered in ascending order.", 20, 170);
         if (clueFive)

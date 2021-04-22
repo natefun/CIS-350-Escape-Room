@@ -151,28 +151,28 @@ public class ERoom extends JFrame implements ActionListener {
 
         //red code button
         redBtn = new JButton("3");
-        redBtn.setBounds(425, 485, 40, 40);
+        redBtn.setBounds(425, 497, 40, 40);
         panel.add(redBtn);
         redBtn.setOpaque(false);
         redBtn.addActionListener(this);
 
         //green code button
         grnBtn = new JButton("card3");
-        grnBtn.setBounds(545, 485, 40, 40);
+        grnBtn.setBounds(545, 497, 40, 40);
         panel.add(grnBtn);
         grnBtn.setOpaque(false);
         grnBtn.addActionListener(this);
 
         //blue code button
         bluBtn = new JButton("card3");
-        bluBtn.setBounds(655, 485, 40, 40);
+        bluBtn.setBounds(655, 497, 40, 40);
         panel.add(bluBtn);
         bluBtn.setOpaque(false);
         bluBtn.addActionListener(this);
 
         //yellow code button
         yelBtn = new JButton("card3");
-        yelBtn.setBounds(755, 485, 40, 40);
+        yelBtn.setBounds(755, 497, 40, 40);
         panel.add(yelBtn);
         yelBtn.setOpaque(false);
         yelBtn.addActionListener(this);

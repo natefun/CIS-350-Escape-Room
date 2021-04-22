@@ -62,6 +62,30 @@ public class Wall extends JPanel {
     }
 
     /**
+     * Returns value of centerConsole3
+     * @return centerConsole3
+     */
+    public int getCenterConsole3() {
+        return centerConsole3;
+    }
+
+    /**
+     * Returns value of centerConsole1
+     * @return centerConsole1
+     */
+    public int getCenterConsole1() {
+        return centerConsole1;
+    }
+
+    /**
+     * Returns value of centerConsole2
+     * @return centerConsole2
+     */
+    public int getCenterConsole2() {
+        return centerConsole2;
+    }
+
+    /**
      * This method increments centerConsole3 until it reaches 4, then it resets to 1.
      */
     public void setCenterConsole3() {
