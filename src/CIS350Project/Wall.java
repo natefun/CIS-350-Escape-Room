@@ -577,6 +577,9 @@ public class Wall extends JPanel {
             colorCode[1] = -1;
             colorCode[2] = -1;
             colorCode[3] = -1;
+        } else if(visWall == -50) {
+            Image image6 = new ImageIcon("winScreen.png").getImage();
+            g.drawImage(image6, 0, 0, this);
         } else {
             Image image = new ImageIcon("placeholderwall0.png").getImage();
             g.drawImage(image, 0, 0, this);

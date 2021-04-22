@@ -804,7 +804,8 @@ public class ERoom extends JFrame implements ActionListener {
 
 //If a string was returned, say so.
                 if (s.equals(t)) {
-                    JOptionPane.showMessageDialog(this, "You Win");
+                    wall.setVisWall(-50);
+//                    JOptionPane.showMessageDialog(this, "You Win");
                 } else {
                     JOptionPane.showMessageDialog(this, "The door does not open.");
                 }
