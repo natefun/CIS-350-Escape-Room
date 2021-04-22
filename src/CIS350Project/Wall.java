@@ -211,6 +211,11 @@ public class Wall extends JPanel {
      * @return the value of consolePuzzle
      */
     public boolean getConsolePuzzle() {
+        if (centerConsole1 == 2 && centerConsole2 == 2 && centerConsole3 == 2) {
+            consolePuzzle = true;
+        } else {
+            consolePuzzle = false;
+        }
         return consolePuzzle;
     }
 
@@ -219,10 +224,12 @@ public class Wall extends JPanel {
      * @return the value of fleetPuzzle
      */
     public boolean getFleetPuzzle() {
-        if (fleetPuzzle)
-            return true;
-        else
-            return false;
+        if (Arrays.equals(fleet, fleetCode)) {
+            fleetPuzzle = true;
+        } else {
+           fleetPuzzle = false;
+        }
+        return fleetPuzzle;
     }
 
     /**
@@ -364,10 +371,9 @@ public class Wall extends JPanel {
                 Image image1 = new ImageIcon("CenterPic41.png").getImage();
                 g.drawImage(image1, 258, 17, this);
             }
-            if (centerConsole1 == 2 && centerConsole2 == 2 && centerConsole3 == 2) {
+            if (consolePuzzle) {
                 Image image4 = new ImageIcon("ConsoleCode.png").getImage();
                 g.drawImage(image4, 258, 17, this);
-                consolePuzzle = true;
             }
 
             //zooms in the clock if viswall is set to -3
@@ -528,7 +534,7 @@ public class Wall extends JPanel {
             if (Arrays.equals(fleet, fleetCode)) {
                 Image image1 = new ImageIcon("BoardCode.png").getImage();
                 g.drawImage(image1, 365, 112, this);
-                fleetPuzzle = true;
+              //  fleetPuzzle = true;
             }
 
         //displays wall one if visWall if appropriate

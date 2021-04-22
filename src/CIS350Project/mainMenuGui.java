@@ -95,7 +95,7 @@ public class mainMenuGui extends JFrame implements ActionListener {
         leaderButton.addActionListener(this);
         loadButton.addActionListener(this);
 
-        //panel.add(background);
+        //0panel.add(background);
         frame.add(panel);
 
 

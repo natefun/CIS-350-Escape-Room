@@ -67,7 +67,7 @@ public void testWall2000() {
         Assert.assertEquals(2, w2.getCenterConsole2());
         Assert.assertEquals(2, w2.getCenterConsole1());
         w2.redraw();
-        Assert.assertEquals(false, w2.getConsolePuzzle());
+        Assert.assertEquals(true, w2.getConsolePuzzle());
     }
 
     //
@@ -85,7 +85,7 @@ public void testWall2000() {
         w2.setFleet(16);
 
         w2.redraw();
-        Assert.assertEquals(false, w2.getFleetPuzzle());
+        Assert.assertEquals(true, w2.getFleetPuzzle());
     }
 
 
