@@ -239,10 +239,6 @@ public class Wall extends JPanel {
             digitNum++;
 //            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
         }
-        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
-            setVisWall(3);
-            redraw();
-        }
     }
 
     /**
@@ -258,10 +254,6 @@ public class Wall extends JPanel {
             }
             digitNum++;
 //            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
-        }
-        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
-            setVisWall(3);
-            redraw();
         }
     }
 
@@ -279,10 +271,6 @@ public class Wall extends JPanel {
             digitNum++;
 //            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
         }
-        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
-            setVisWall(3);
-            redraw();
-        }
     }
 
     /**
@@ -299,7 +287,7 @@ public class Wall extends JPanel {
             digitNum++;
 //            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
         }
-        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+        if(colorCode[0] == 0 && colorCode[1] == 2 && colorCode[2] == 1 && colorCode[3] == 3){
             setVisWall(3);
             redraw();
         }

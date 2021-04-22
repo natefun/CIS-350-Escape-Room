@@ -6,14 +6,10 @@ import java.awt.*;
 
 public class Inventory extends JPanel {
     JLabel clue1;
-    boolean noteInv, coldOneInv, clueOne, clueTwo, clueThree, clueFour, clueFive, clueSix, cardInv = false;
+    boolean noteInv,  clueOne, clueTwo, clueThree, clueFour, clueFive, clueSix, cardInv = false;
 
     public void setNoteInv() {
         noteInv = true;
-    }
-
-    public void setColdOneInv() {
-        coldOneInv = true;
     }
 
     public void setClueOne() {
@@ -93,10 +89,6 @@ public class Inventory extends JPanel {
 
         g.setFont(heading);
         g.drawString("Inventory", 580, 50);
-        if (coldOneInv) {
-            Image item = new ImageIcon("coldOne.png").getImage();
-            g.drawImage(item, 580, 60, this);
-        }
         if (noteInv) {
             Image note = new ImageIcon("noteInv.png").getImage();
             g.drawImage(note, 680, 60, this);
