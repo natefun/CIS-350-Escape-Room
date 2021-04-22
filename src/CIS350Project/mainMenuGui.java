@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Toolkit;
 
 public class mainMenuGui extends JFrame implements ActionListener {
 
@@ -46,9 +47,15 @@ public class mainMenuGui extends JFrame implements ActionListener {
 
 
 
-        JPanel panel = new JPanel();
+        JPanel panel = new JPanel(){
+            public void paintComponent(Graphics g) {
+               Image bg = new ImageIcon("main menu.png").getImage();
+               g.drawImage(bg,0,0,this);
+            }
+        };
 
         panel.setLayout(null);
+        //JLabel background = new JLabel(new ImageIcon("main menu.png"));
         panel.setBackground(new Color(0, 0, 0, 255));
 
 
@@ -88,7 +95,7 @@ public class mainMenuGui extends JFrame implements ActionListener {
         leaderButton.addActionListener(this);
         loadButton.addActionListener(this);
 
-
+        //panel.add(background);
         frame.add(panel);
 
 

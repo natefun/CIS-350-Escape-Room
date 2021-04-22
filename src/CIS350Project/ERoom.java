@@ -10,7 +10,6 @@ public class ERoom extends JFrame implements ActionListener {
     private final Wall wall;
     private final Inventory inv;
     private StopWatch timer;
-    private  starsGui fin;
 
     private JMenuBar menus;
     private JMenu fileMenu;
@@ -398,13 +397,6 @@ public class ERoom extends JFrame implements ActionListener {
 
     }
 
-    public String getMins(){
-        return timer.getMins();
-    }
-
-    public String getSecs(){
-        return timer.getMins();
-    }
 
 
 // Something like this eventually
@@ -573,6 +565,12 @@ public class ERoom extends JFrame implements ActionListener {
                 wall.redraw();
             } else if (wall.getVisWall() == -7) {
                 wall.setVisWall(3);
+                wall.redraw();
+            }else if (wall.getVisWall() == -4) {
+                wall.setVisWall(2);
+                wall.redraw();
+            }else if (wall.getVisWall() == -3) {
+                wall.setVisWall(2);
                 wall.redraw();
             }
         }
@@ -815,12 +813,12 @@ public class ERoom extends JFrame implements ActionListener {
 
 //If a string was returned, say so.
                 if (s.equals(t)) {
-                    fin = new starsGui();
-                    JFrame frame = new JFrame();
-                    frame.setSize(900,800);
-                    frame.add(fin);
-                    frame.setVisible(true);
-                    dispose();
+//                    fin = new starsGui();
+//                    JFrame frame = new JFrame();
+//                    frame.setSize(900,800);
+//                    frame.add(fin);
+//                    frame.setVisible(true);
+//                    dispose();
                     timer.stop();
 
                     wall.setVisWall(-50);
