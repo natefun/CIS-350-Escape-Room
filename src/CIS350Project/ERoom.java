@@ -1,7 +1,6 @@
 package CIS350Project;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 
 public class ERoom extends JFrame implements ActionListener {
@@ -576,6 +575,8 @@ public class ERoom extends JFrame implements ActionListener {
             if (wall.getVisWall() == -4) {
                 wall.getPassedG();
                 }
+            if(wall.getPassedG())
+                inv.setClueTwo();
                 wall.redraw();
             }
 
@@ -823,8 +824,7 @@ public class ERoom extends JFrame implements ActionListener {
             inv.setClueOne();
         if (wall.getConsolePuzzle())
             inv.setClueFour();
-        if(wall.getPassedG())
-            inv.setClueTwo();
+
         if(wall.getColorPuzzle()) {
             inv.setClueThree();
             inv.setClueFive();

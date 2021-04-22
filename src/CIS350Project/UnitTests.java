@@ -3,8 +3,7 @@ package CIS350Project;
 import org.junit.Assert;
 import org.junit.Test;
 
-import javax.swing.*;
-import java.awt.*;
+
 
 public class UnitTests {
 public UnitTests(){
@@ -70,7 +69,7 @@ public void testWall2000() {
         Assert.assertEquals(true, w2.getConsolePuzzle());
     }
 
-    //
+    //checks that when the proper fleets are placed on the console that getFleetPuzzle is set to true.
     @Test
     public void testFleet() {
         Wall w2 = new Wall();
