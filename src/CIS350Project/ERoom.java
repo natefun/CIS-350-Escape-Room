@@ -5,10 +5,9 @@ import java.awt.event.*;
 
 public class ERoom extends JFrame implements ActionListener {
 
-    private JPanel panel;
     private final Wall wall;
     private final Inventory inv;
-    private StopWatch timer;
+    private final StopWatch timer;
 
     private JMenuBar menus;
     private JMenu fileMenu;
@@ -73,7 +72,7 @@ public class ERoom extends JFrame implements ActionListener {
     ERoom() {
         setSize(1000, 600);
         setLocationRelativeTo(null);
-        panel = new JPanel();
+        JPanel panel = new JPanel();
         add(panel);
         panel.setLayout(null);
 
@@ -789,16 +788,6 @@ public class ERoom extends JFrame implements ActionListener {
                         "No, thanks",
                         "No eggs, no ham!"};
 //                int n = JOptionPane.showOptionDialog(this,)
-
-//                int n = JOptionPane.showOptionDialog(this,
-//                        "Would you like some green eggs to go "
-//                                + "with that ham?",
-//                        "A Silly Question",
-//                        JOptionPane.YES_NO_CANCEL_OPTION,
-//                        JOptionPane.QUESTION_MESSAGE,
-//                        null,
-//                        options,
-//                        options[2]);
 
                 Object[] possibilities = {"ham", "spam", "yam"};
                 String s = (String)JOptionPane.showInputDialog(

@@ -100,11 +100,6 @@ public class Inventory extends JPanel {
         }
 
 
-
-//        clue1 = new JLabel("The exit code include the digits 5, 4, and 2");
-//        clue1.setBounds(10, 10, 500, 250);
-
-
     }
 
     public void redrawInv() {

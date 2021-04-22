@@ -100,7 +100,7 @@ public class Wall extends JPanel {
     /**
      * this sets the number for slot one in access cod
      *
-     * @param newNum1
+     * @param newNum1 sets this variable to the number selected
      */
     public void setNum1(int newNum1) {
         this.num1 = newNum1;
@@ -118,7 +118,7 @@ public class Wall extends JPanel {
     /**
      * this sets the number for slot two in access code
      *
-     * @param newNum2
+     * @param newNum2 sets this variable to the number selected
      */
     public void setNum2(int newNum2) {
         this.num2 = newNum2;
@@ -136,7 +136,7 @@ public class Wall extends JPanel {
     /**
      * this sets the number for slot three in access code
      *
-     * @param newNum3
+     * @param newNum3 sets this variable to the number selected
      */
     public void setNum3(int newNum3) {
         this.num3 = newNum3;

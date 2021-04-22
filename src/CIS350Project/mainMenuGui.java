@@ -18,10 +18,6 @@ public class mainMenuGui extends JFrame implements ActionListener {
   public ERoom room;
 
 
-  private final JLabel label;
-
-
-
     /**
      * constructor mainMenuGui that create frame and panel
      * where JButtons are created
@@ -51,7 +47,7 @@ public class mainMenuGui extends JFrame implements ActionListener {
         panel.setBackground(new Color(0, 0, 0, 255));
 
 
-       label = new JLabel("SPACE ESCAPE");
+        JLabel label = new JLabel("SPACE ESCAPE");
        label.setFont(new Font("Monospace", Font.ITALIC, 50));
        label.setForeground(Color.white);
        label.setSize(400,200);
