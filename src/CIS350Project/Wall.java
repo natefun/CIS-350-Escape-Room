@@ -30,6 +30,8 @@ public class Wall extends JPanel {
     int digitNum = 0;
     int[] colorCode = new int[4];
 
+    boolean colorsPassed = false;
+
 
     /**
      * This method updates variable visWall.  This controls which wall the user sees.
@@ -248,6 +250,7 @@ public class Wall extends JPanel {
         }
         if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
             System.out.println(" went here ");
+            colorsPassed = true;
             setVisWall(3);
             redraw();
         }
@@ -269,6 +272,7 @@ public class Wall extends JPanel {
         }
         if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
             System.out.println(" went here ");
+            colorsPassed = true;
             setVisWall(3);
             redraw();
         }
@@ -290,6 +294,7 @@ public class Wall extends JPanel {
         }
         if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
             System.out.println(" went here ");
+            colorsPassed = true;
             setVisWall(3);
             redraw();
         }
@@ -311,6 +316,7 @@ public class Wall extends JPanel {
         }
         if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
             System.out.println(" went here ");
+            colorsPassed = true;
             setVisWall(3);
             redraw();
         }
