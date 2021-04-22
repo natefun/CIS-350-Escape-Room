@@ -17,7 +17,6 @@ public class ERoom extends JFrame implements ActionListener {
 
     private final JButton turnRight;
     private final JButton turnLeft;
-    private JButton askForHint;
     private final JButton pickNote;
 
     private final JButton viewScreen;
@@ -89,8 +88,6 @@ public class ERoom extends JFrame implements ActionListener {
 
         timer = new StopWatch();
         timer.start();
-//        timer.setBounds(1000,800,165,115);
-//        panel.add(timer);
 
         JMenuBar menus = new JMenuBar();
         setJMenuBar(menus);
