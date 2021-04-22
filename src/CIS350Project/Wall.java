@@ -31,7 +31,6 @@ public class Wall extends JPanel {
     int[] colorCode = new int[4];
 
 
-
     /**
      * This method updates variable visWall.  This controls which wall the user sees.
      *
@@ -311,6 +310,7 @@ public class Wall extends JPanel {
      */
     public void cardInserted(){
         cardInserted = true;
+        colorCode = new int[]{-1, -1, -1, -1};
     }
 
 
@@ -573,10 +573,6 @@ public class Wall extends JPanel {
         }else if (visWall == -7) {
             Image image6 = new ImageIcon("CardReaderZoom.png").getImage();
             g.drawImage(image6, 0, 0, this);
-            colorCode[0] = -1;
-            colorCode[1] = -1;
-            colorCode[2] = -1;
-            colorCode[3] = -1;
         } else {
             Image image = new ImageIcon("placeholderwall0.png").getImage();
             g.drawImage(image, 0, 0, this);
