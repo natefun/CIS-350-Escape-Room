@@ -31,7 +31,6 @@ public class Wall extends JPanel {
     int[] colorCode = new int[4];
 
 
-
     /**
      * This method updates variable visWall.  This controls which wall the user sees.
      *
@@ -59,6 +58,30 @@ public class Wall extends JPanel {
             centerConsole2 = 1;
         else
             centerConsole2 = centerConsole2 + 1;
+    }
+
+    /**
+     * Returns value of centerConsole3
+     * @return centerConsole3
+     */
+    public int getCenterConsole3() {
+        return centerConsole3;
+    }
+
+    /**
+     * Returns value of centerConsole1
+     * @return centerConsole1
+     */
+    public int getCenterConsole1() {
+        return centerConsole1;
+    }
+
+    /**
+     * Returns value of centerConsole2
+     * @return centerConsole2
+     */
+    public int getCenterConsole2() {
+        return centerConsole2;
     }
 
     /**
@@ -183,10 +206,18 @@ public class Wall extends JPanel {
         card = false;
     }
 
+    /**
+     * Returns the value of consolePuzzle
+     * @return the value of consolePuzzle
+     */
     public boolean getConsolePuzzle() {
         return consolePuzzle;
     }
 
+    /**
+     * Returns the value of fleetPuzzle
+     * @return the value of fleetPuzzle
+     */
     public boolean getFleetPuzzle() {
         if (fleetPuzzle)
             return true;
@@ -208,10 +239,6 @@ public class Wall extends JPanel {
             digitNum++;
 //            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
         }
-        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
-            setVisWall(3);
-            redraw();
-        }
     }
 
     /**
@@ -227,10 +254,6 @@ public class Wall extends JPanel {
             }
             digitNum++;
 //            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
-        }
-        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
-            setVisWall(3);
-            redraw();
         }
     }
 
@@ -248,10 +271,6 @@ public class Wall extends JPanel {
             digitNum++;
 //            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
         }
-        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
-            setVisWall(3);
-            redraw();
-        }
     }
 
     /**
@@ -268,7 +287,7 @@ public class Wall extends JPanel {
             digitNum++;
 //            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
         }
-        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+        if(colorCode[0] == 0 && colorCode[1] == 2 && colorCode[2] == 1 && colorCode[3] == 3){
             setVisWall(3);
             redraw();
         }
@@ -279,6 +298,7 @@ public class Wall extends JPanel {
      */
     public void cardInserted(){
         cardInserted = true;
+        colorCode = new int[]{-1, -1, -1, -1};
     }
 
 
@@ -444,7 +464,7 @@ public class Wall extends JPanel {
                 Image pass = new ImageIcon("greenbutpassed.png").getImage();
                 g.drawImage(pass, 0, 0, this);
             }
-
+        //zooms in on the fleet board puzzle and adds a fleet icon as buttons are clicked
         } else if (visWall == -2) {
             Image image = new ImageIcon("BoardCloseUp.png").getImage();
             g.drawImage(image, 0, 0, this);
@@ -504,13 +524,14 @@ public class Wall extends JPanel {
                 Image image1 = new ImageIcon("shipToken.png").getImage();
                 g.drawImage(image1, 679, 443, this);
             }
+            //Shows clue if all fleet values are correct
             if (Arrays.equals(fleet, fleetCode)) {
                 Image image1 = new ImageIcon("BoardCode.png").getImage();
                 g.drawImage(image1, 365, 112, this);
                 fleetPuzzle = true;
             }
 
-
+        //displays wall one if visWall if appropriate
         } else if (visWall % 4 == 1) {
             Image image = new ImageIcon("placeholderwall.png").getImage();
             g.drawImage(image, 0, 0, this);
@@ -544,6 +565,9 @@ public class Wall extends JPanel {
             colorCode[1] = -1;
             colorCode[2] = -1;
             colorCode[3] = -1;
+        } else if(visWall == -50) {
+            Image image6 = new ImageIcon("winScreen.png").getImage();
+            g.drawImage(image6, 0, 0, this);
         } else {
             Image image = new ImageIcon("placeholderwall0.png").getImage();
             g.drawImage(image, 0, 0, this);
