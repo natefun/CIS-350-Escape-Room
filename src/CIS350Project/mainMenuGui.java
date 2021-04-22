@@ -24,8 +24,6 @@ public class mainMenuGui extends JFrame implements ActionListener {
   /** creates object room */
   public ERoom room;
 
-  /** creates object timer */
-  public StopWatch timer;
 
   private final JLabel label;
 
@@ -45,20 +43,14 @@ public class mainMenuGui extends JFrame implements ActionListener {
         frame.setSize(900 + insets.left + insets.right,
                 800 + insets.top + insets.bottom);
 
-      //JPanel s = new starsGui();
-       starsGui s = new starsGui();
-       //s.setLayout(null);
-      // s.setVisible(true);
-       //frame.getContentPane().add(s);
+
 
 
         JPanel panel = new JPanel();
 
         panel.setLayout(null);
         panel.setBackground(new Color(0, 0, 0, 255));
-        //panel.add(s);
-        //frame.add(s);
-        //frame.getContentPane().add(s);
+
 
        label = new JLabel("SPACE ESCAPE");
        label.setFont(new Font("Monospace", Font.ITALIC, 50));
@@ -77,8 +69,6 @@ public class mainMenuGui extends JFrame implements ActionListener {
         panel.add(startButton);
         panel.add(leaderButton);
         panel.add(loadButton);
-        //panel.add(s);
-        //frame.add(s);
 
      insets = panel.getInsets();
 
@@ -98,11 +88,9 @@ public class mainMenuGui extends JFrame implements ActionListener {
         leaderButton.addActionListener(this);
         loadButton.addActionListener(this);
 
-        //s.add(panel);
-        //frame.add(s);
+
         frame.add(panel);
-        //frame.add(s);
-        //frame.getContentPane().add(s);
+
 
         frame.setResizable(false);
         frame.setVisible(true);
@@ -119,7 +107,7 @@ public class mainMenuGui extends JFrame implements ActionListener {
         Object selc = e.getSource();
 
 //if the start button to start game and starts stopwatch
-        if (startButton == selc){
+        if (startButton == selc) {
             room = new ERoom();
             room.setVisible(true);
 
@@ -128,15 +116,6 @@ public class mainMenuGui extends JFrame implements ActionListener {
                     1000 + insets.top + insets.bottom);
             frame.dispose();
 
-            timer = new StopWatch();
-            timer.start();
-        }
-// shows leaderboard
-        if (leaderButton == selc){
-        }
-
-        // allows the user to load a saved game
-        if (loadButton == selc){
         }
 
     }

@@ -5,12 +5,28 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class starsGui extends JPanel implements ActionListener {
+    public StopWatch timer;
+    public ERoom wall;
     final Timer time = new Timer(5,this);
     final int x = 450;
     final int y = 400;
     final int speed = 4;
     int x1 = x, x2 = x;
     int y1 = y, y2 = y;
+
+    private final JLabel label;
+
+    starsGui(){
+        wall = new ERoom();
+        label = new JLabel(wall.getMins() + ":" + wall.getSecs());
+        label.setFont(new Font("Monospace", Font.ITALIC, 50));
+        label.setForeground(Color.white);
+        label.setSize(400,200);
+        label.setLocation(275,100);
+
+        add(label);
+
+    }
 
     /**
      * create the stars

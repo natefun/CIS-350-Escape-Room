@@ -78,6 +78,14 @@ public class StopWatch extends JPanel{
       timeLabel.setText(minutes_string+":"+seconds_string);
     }
 
+    public String getMins(){
+        return this.minutes_string;
+    }
+
+    public String getSec(){
+        return this.seconds_string;
+    }
+
     /**
      * creates the timer GUI
      * @param args

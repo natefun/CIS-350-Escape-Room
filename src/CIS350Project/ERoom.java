@@ -1,6 +1,7 @@
 package CIS350Project;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class ERoom extends JFrame implements ActionListener {
@@ -9,6 +10,7 @@ public class ERoom extends JFrame implements ActionListener {
     private final Wall wall;
     private final Inventory inv;
     private StopWatch timer;
+    private  starsGui fin;
 
     private JMenuBar menus;
     private JMenu fileMenu;
@@ -86,7 +88,8 @@ public class ERoom extends JFrame implements ActionListener {
         inv.setBounds(50, 620, 1100, 300);
         panel.add(inv);
 
-//        timer = new StopWatch();
+        timer = new StopWatch();
+        timer.start();
 //        timer.setBounds(1000,800,165,115);
 //        panel.add(timer);
 
@@ -393,6 +396,14 @@ public class ERoom extends JFrame implements ActionListener {
         keypad.addActionListener(this);
 
 
+    }
+
+    public String getMins(){
+        return timer.getMins();
+    }
+
+    public String getSecs(){
+        return timer.getMins();
     }
 
 
@@ -804,7 +815,14 @@ public class ERoom extends JFrame implements ActionListener {
 
 //If a string was returned, say so.
                 if (s.equals(t)) {
-                    JOptionPane.showMessageDialog(this, "You Win");
+                    fin = new starsGui();
+                    JFrame frame = new JFrame();
+                    frame.setSize(900,800);
+                    frame.add(fin);
+                    frame.setVisible(true);
+                    dispose();
+                    timer.stop();
+
                 } else {
                     JOptionPane.showMessageDialog(this, "The door does not open.");
                 }
