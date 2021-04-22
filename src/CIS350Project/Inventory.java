@@ -99,10 +99,6 @@ public class Inventory extends JPanel {
             g.drawImage(note, 880, 60, this);
         }
 
-        g.setColor(Color.RED);
-        Font clock = new Font("Baskerville Old Face", Font.BOLD, 50);
-        g.setFont(clock);
-        g.drawString("8:34", 1000, 290);
 
 
 //        clue1 = new JLabel("The exit code include the digits 5, 4, and 2");
