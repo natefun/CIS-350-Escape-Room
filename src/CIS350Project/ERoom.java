@@ -833,6 +833,8 @@ public class ERoom extends JFrame implements ActionListener {
             inv.setClueOne();
         if (wall.getConsolePuzzle())
             inv.setClueFour();
+        if(wall.getPassedG())
+            inv.setClueTwo();
         inv.redrawInv();
 
 

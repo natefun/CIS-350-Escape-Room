@@ -14,13 +14,6 @@ public class mainMenuGui extends JFrame implements ActionListener {
 
  /** final for startButton */
   private final JButton startButton;
- /** final for leaderButton */
-
- private final JButton leaderButton;
-
-  /** final for loadButton */
-  private final JButton loadButton;
-
 
   /** creates object room */
   public ERoom room;
@@ -68,32 +61,20 @@ public class mainMenuGui extends JFrame implements ActionListener {
 
 
         startButton = new JButton("start game");
-        leaderButton = new JButton("leader board");
-        loadButton = new JButton("load Game");
+
 
 
         panel.add(label);
         panel.add(startButton);
-        panel.add(leaderButton);
-        panel.add(loadButton);
+
 
      insets = panel.getInsets();
 
         Dimension size = startButton.getPreferredSize();
         startButton.setBounds(375 + insets.left, 300 + insets.top,
                 size.width + 50, size.height + 20);
-        size = leaderButton.getPreferredSize();
-        leaderButton.setBounds(370 + insets.left, 350 + insets.top,
-                size.width + 50, size.height + 20);
-        size = loadButton.getPreferredSize();
-        loadButton.setBounds(375 + insets.left, 400 + insets.top,
-                size.width + 50, size.height + 20);
-
-
 
         startButton.addActionListener(this);
-        leaderButton.addActionListener(this);
-        loadButton.addActionListener(this);
 
         //0panel.add(background);
         frame.add(panel);
