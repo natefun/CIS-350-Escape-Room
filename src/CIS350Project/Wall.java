@@ -244,7 +244,12 @@ public class Wall extends JPanel {
                 colorCode[digitNum] = 0;
             }
             digitNum++;
-//            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+        }
+        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+            System.out.println(" went here ");
+            setVisWall(3);
+            redraw();
         }
     }
 
@@ -260,7 +265,12 @@ public class Wall extends JPanel {
                 colorCode[digitNum] = 1;
             }
             digitNum++;
-//            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+        }
+        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+            System.out.println(" went here ");
+            setVisWall(3);
+            redraw();
         }
     }
 
@@ -276,7 +286,12 @@ public class Wall extends JPanel {
                 colorCode[digitNum] = 2;
             }
             digitNum++;
-//            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+        }
+        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+            System.out.println(" went here ");
+            setVisWall(3);
+            redraw();
         }
     }
 
@@ -292,9 +307,10 @@ public class Wall extends JPanel {
                 colorCode[digitNum] = 3;
             }
             digitNum++;
-//            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
+            System.out.println(" one " + colorCode[0] + " two " + colorCode[1] + " three " + colorCode[2] + " four " + colorCode[3]);
         }
-        if(colorCode[0] == 0 && colorCode[1] == 2 && colorCode[2] == 1 && colorCode[3] == 3){
+        if(colorCode[0] == 0 && colorCode[1] == 3 && colorCode[2] == 2 && colorCode[3] == 1){
+            System.out.println(" went here ");
             setVisWall(3);
             redraw();
         }
@@ -567,10 +583,6 @@ public class Wall extends JPanel {
         }else if (visWall == -7) {
             Image image6 = new ImageIcon("CardReaderZoom.png").getImage();
             g.drawImage(image6, 0, 0, this);
-            colorCode[0] = -1;
-            colorCode[1] = -1;
-            colorCode[2] = -1;
-            colorCode[3] = -1;
         } else if(visWall == -50) {
             Image image6 = new ImageIcon("winScreen.png").getImage();
             g.drawImage(image6, 0, 0, this);
