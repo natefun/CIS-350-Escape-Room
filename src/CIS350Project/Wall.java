@@ -235,6 +235,14 @@ public class Wall extends JPanel {
     }
 
     /**
+     * Returns the value of getColorPuzzle
+     * @return the value of getColorPuzzle
+     */
+    public boolean getColorPuzzle() {
+        return colorsPassed;
+    }
+
+    /**
      * Allows you to enter the red digit of the code
      */
     public void redPressed(){
